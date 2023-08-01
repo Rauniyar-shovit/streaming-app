@@ -17,7 +17,7 @@ const Background = ({ children, src, className }: props) => {
         layout="fill"
         objectFit="cover"
         objectPosition="center"
-        className="-z-20"
+        className="-z-20 "
       />
 
       <div className="w-full h-full absolute bg-primary-black  -z-10 opacity-60" />

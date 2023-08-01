@@ -11,6 +11,9 @@ import Button from "./Button";
 import RenderFeaturedVideo from "./RenderFeaturedVideo";
 import Background from "./Background";
 import Download from "./Download";
+import SignInForm from "./SignInForm";
+import Form from "./Form";
+
 export {
   Hero,
   CustomContent,
@@ -25,4 +28,6 @@ export {
   Download,
   RenderFeaturedVideo,
   Background,
+  SignInForm,
+  Form,
 };

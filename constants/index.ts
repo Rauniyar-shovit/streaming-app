@@ -93,3 +93,13 @@ export const links = [
   { title: "Legal notices", link: "#" },
   { title: "Only on Netflix", link: "#" },
 ];
+
+export const loginFooterLinks = [
+  { title: "FAQ", link: "#" },
+  { title: "Help Centre", link: "#" },
+  { title: "Netflix Shop", link: "#" },
+  { title: "Terms of Use", link: "#" },
+  { title: "Privacy", link: "#" },
+  { title: "Cookie Preferences", link: "#" },
+  { title: "Corporate Information", link: "#" },
+];

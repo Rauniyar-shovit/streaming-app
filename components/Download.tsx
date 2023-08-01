@@ -4,7 +4,7 @@ import { HiArrowDown } from "react-icons/hi2";
 
 const Download = () => {
   return (
-    <div className="border-[2px] w-[60%] border-gray-400 z-20 rounded-[10px] absolute top-1/2 left-1/2 -translate-x-1/2 translate-y-20 bg-primary-black">
+    <div className="border-[2px] w-[60%] border-gray-400 z-20 rounded-[10px] absolute  left-1/2  bottom-[52px] -translate-x-1/2  bg-primary-black">
       <div className="flex justify-between items-center gap-4 p-2">
         <div className="flex gap-4 flex-center">
           <Image

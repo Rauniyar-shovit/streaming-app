@@ -8,7 +8,7 @@ const Hero = () => {
     <div>
       <Background
         src="/hero.jpg"
-        className=" h-[60vh] flex justify-center items-center  flex-col"
+        className=" h-[100vh] flex justify-center items-center  flex-col"
       >
         <CustomContent
           title={heroContent.title}
