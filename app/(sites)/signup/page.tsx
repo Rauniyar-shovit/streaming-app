@@ -10,7 +10,7 @@ import React, { useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
 
-const signin = () => {
+const Page = () => {
   const {
     formState: { errors, isSubmitting },
     register,
@@ -36,8 +36,6 @@ const signin = () => {
       console.log(error);
     }
   }, []);
-
-  console.log(errors);
 
   return (
     <>
@@ -157,4 +155,4 @@ const signin = () => {
   );
 };
 
-export default signin;
+export default Page;

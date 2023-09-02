@@ -3,7 +3,7 @@ import LogoutButton from "@/components/LogoutButton";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
-const page = async () => {
+const Browse = async () => {
   const session = await getServerSession(authOptions);
   if (!session) {
     redirect("/login");
@@ -17,4 +17,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Browse;

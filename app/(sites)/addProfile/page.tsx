@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const Page = () => {
+const AddProfile = () => {
   return (
     <div className="h-[100vh] flex flex-col items-center justify-center gap-8 ">
       <div>
@@ -29,4 +29,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default AddProfile;

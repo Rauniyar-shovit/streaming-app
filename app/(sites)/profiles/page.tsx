@@ -3,7 +3,7 @@ import React from "react";
 import { AddProfile, ProfileCard } from "@/components";
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
 import { getServerSession } from "next-auth";
-const page = async () => {
+const Profiles = async () => {
   const session = await getServerSession(authOptions);
   if (!session) {
     redirect("/login");
@@ -20,4 +20,4 @@ const page = async () => {
   );
 };
 
-export default page;
+export default Profiles;
