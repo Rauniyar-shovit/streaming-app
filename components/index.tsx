@@ -13,6 +13,8 @@ import Background from "./Background";
 import Download from "./Download";
 import SignInForm from "./SignInForm";
 import Form from "./Form";
+import ProfileCard from "./ProfileCard";
+import AddProfile from "./AddProfile";
 
 export {
   Hero,
@@ -30,4 +32,6 @@ export {
   Background,
   SignInForm,
   Form,
+  ProfileCard,
+  AddProfile,
 };

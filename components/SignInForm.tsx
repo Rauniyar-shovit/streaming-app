@@ -1,5 +1,5 @@
-import React, { useState } from "react";
-import { Button, Form } from ".";
+import React from "react";
+import { Form } from ".";
 import Link from "next/link";
 
 type FormValues = {
@@ -10,14 +10,14 @@ type FormValues = {
 const SignInForm = () => {
   return (
     <>
-      <div className="absolute top-[120px] sm:left-1/2 sm:-translate-x-1/2 bg-primary-black-200 rounded z-10 ">
-        <div className="sm:px-16 sm:pt-16 sm:pb-32 px-4 pt-8 pb-24 flex flex-col gap-8   sm:max-w-[430px] w-screen">
+      <div className="mt-28 bg-primary-black-200 rounded z-10 ">
+        <div className="px-16 pt-16 pb-32  flex flex-col gap-8   sm:w-[460px]">
           <h1 className="text-4xl font-[600] tracking-tight ">Sign in</h1>
 
           <Form />
-          <p className="text-[20px]  text-primary-black-300">
+          <p className="text-[15px]  text-primary-black-300 mt-8">
             New to Netflix?{" "}
-            <Link href="/" className="text-white hover:underline">
+            <Link href="/signup" className="text-white hover:underline">
               Sign up now
             </Link>
           </p>

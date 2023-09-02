@@ -1,8 +1,6 @@
 import React from "react";
-import Image from "next/image";
 import { Background, CustomContent, GetStarted } from ".";
 import { heroContent } from "@/constants";
-import Button from "./Button";
 const Hero = () => {
   return (
     <div>

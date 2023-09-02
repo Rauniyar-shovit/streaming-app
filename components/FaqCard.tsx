@@ -1,7 +1,7 @@
 "use client";
 import { FaqProps } from "@/types";
 
-import React from "react";
+import React, { Fragment } from "react";
 import { HiPlus, HiXMark } from "react-icons/hi2";
 import { Collapse } from "react-collapse";
 const FaqCard = ({ question, answer, open, onClick }: FaqProps) => {
@@ -33,9 +33,9 @@ const FaqCard = ({ question, answer, open, onClick }: FaqProps) => {
         <Collapse isOpened={open}>
           <div className="bg-gray-200 p-6 text-[22px] font-light">
             {answer.split("\n").map((text, i) => (
-              <>
-                <p key={i}>{text}</p> <br />
-              </>
+              <Fragment key={i}>
+                <p>{text}</p> <br />
+              </Fragment>
             ))}
           </div>
         </Collapse>
