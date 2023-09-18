@@ -12,7 +12,7 @@ const ProfileCard = () => {
       className="flex flex-col  justify-center items-center ease-in profile_container cursor-pointer "
     >
       <Image
-        src={"/default-blue.png"}
+        src={"/default-green.png"}
         alt="profile"
         width={130}
         height={130}

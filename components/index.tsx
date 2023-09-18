@@ -15,6 +15,10 @@ import SignInForm from "./SignInForm";
 import Form from "./Form";
 import ProfileCard from "./ProfileCard";
 import AddProfile from "./AddProfile";
+import BrowseNavbar from "./BrowseNavbar";
+import Search from "./Search";
+import BannerVideo from "./BannerVideo";
+import BannerDetail from "./BannerDetail";
 
 export {
   Hero,
@@ -34,4 +38,8 @@ export {
   Form,
   ProfileCard,
   AddProfile,
+  BrowseNavbar,
+  Search,
+  BannerVideo,
+  BannerDetail,
 };

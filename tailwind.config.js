@@ -45,8 +45,8 @@ module.exports = {
     colors: {
       "primary-red": { DEFAULT: "#e20a14", 100: "#b50810" },
       "primary-black": {
-        DEFAULT: "#000000",
-        100: "#1a1a1a",
+        DEFAULT: "#141414",
+        100: "#141414",
         200: "rgba(0,0,0,0.6)",
         300: "#737373",
       },

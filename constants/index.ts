@@ -103,3 +103,22 @@ export const loginFooterLinks = [
   { title: "Cookie Preferences", link: "#" },
   { title: "Corporate Information", link: "#" },
 ];
+
+export const profile = [
+  { title: "profile-blue", source: "/default-blue" },
+  { title: "profile-green", source: "/default-green" },
+  { title: "profile-red", source: "/default-red" },
+  { title: "profile-slate", source: "/default-slate" },
+  { title: "profile-yellow", source: "/default-yellow" },
+];
+
+export const navLinks = [
+  { title: "Home", link: "#" },
+  { title: "TV Shows", link: "#" },
+  { title: "Movies", link: "#" },
+  { title: "New & popular", link: "#" },
+  { title: "My list", link: "#" },
+  { title: "Browse by Language", link: "#" },
+];
+
+export const BASE_URL = "https://api.themoviedb.org/3/movie";

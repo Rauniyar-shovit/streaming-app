@@ -41,3 +41,7 @@ body {
 .profile_container:hover p {
   @apply text-white;
 }
+
+.banner_video {
+  @apply border-2 border-white;
+}

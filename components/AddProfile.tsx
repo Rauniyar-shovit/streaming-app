@@ -2,6 +2,7 @@
 import { useRouter } from "next/navigation";
 import React from "react";
 import { BsPersonFillAdd } from "react-icons/bs";
+
 const AddProfile = () => {
   const router = useRouter();
   return (

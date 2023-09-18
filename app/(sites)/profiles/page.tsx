@@ -9,6 +9,7 @@ const Profiles = async () => {
   if (!session) {
     redirect("/login");
   }
+
   return (
     <div className="h-[100vh] flex flex-col items-center justify-center">
       <p className="text-5xl mb-8">Who&apos;s Watching?</p>
