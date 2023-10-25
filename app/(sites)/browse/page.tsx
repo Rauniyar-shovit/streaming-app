@@ -1,8 +1,9 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { BannerDetail, BannerVideo, BrowseNavbar } from "@/components";
+import { Banner, Navbar } from "@/components";
 import LogoutButton from "@/components/LogoutButton";
+import MovieModal from "@/components/MovieModal";
+import { MyList } from "@/components/MyList";
 import axios from "axios";
-
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
 
@@ -12,18 +13,19 @@ const Browse = async () => {
     redirect("/login");
   }
 
-  const { data } = await axios.get("http://127.0.0.1:3000/api/banner");
+  const {
+    data: { showData, showTrailerKey },
+  } = await axios.get("http://127.0.0.1:3000/api/banner");
+  // console.log("browse -----------------", showData, showTrailerKey);
 
   return (
     <>
-      <BrowseNavbar />
-      <div className="relative">
-        <BannerVideo videoKey={data.selectedMovieVideo.key} />
-        <BannerDetail
-          title={data.randomMovie.title}
-          description={data.randomMovie.overview}
-        />
-      </div>
+      <Navbar />
+      <Banner show={showData} videoKey={showTrailerKey} />
+      <MyList />
+      <MovieModal />
+
+      <LogoutButton />
     </>
   );
 };

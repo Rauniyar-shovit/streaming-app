@@ -1,29 +1,52 @@
 "use client";
-import Image from "next/image";
-import React from "react";
-import { Button } from "./";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
 
+import Image from "next/image";
+import React, { useState } from "react";
+import { navLinks } from "@/constants";
+import Link from "next/link";
+import { Search } from ".";
+import { IoNotificationsOutline } from "react-icons/io5";
+import { HiOutlineMenu } from "react-icons/hi";
 const Navbar = () => {
-  const router = useRouter();
+  const [isOpen, setIsOpen] = useState(false);
+
   return (
-    <header>
-      <div className="w-[80%] absolute top-8 left-1/2 -translate-x-1/2 z-10">
-        <div className="flex items-center justify-between">
-          <Link href="/">
-            <Image src="/logo.svg" width={150} height={100} alt="logo" />
-          </Link>
-          <Button
-            title="Sign in"
-            handleClick={() => {
-              router.push("/login");
-            }}
-            className="px-3 py-1  text-[16px] "
+    <nav className="fixed left-1/2 -translate-x-1/2 flex w-[90%] mx-auto my-5 justify-between items-center z-30">
+      <div className=" flex xl:gap-12 gap-6 items-center">
+        <div className="block xl:hidden">
+          {!isOpen && <HiOutlineMenu className="text-3xl" />}
+        </div>
+        <Link href={"/"}>
+          <div className="cursor-pointer">
+            <Image src="/logo.svg" width={90} height={100} alt="logo" />
+          </div>
+        </Link>
+        <div className="hidden xl:block">
+          <div className="flex  gap-4 text-sm">
+            {navLinks.map((link) => (
+              <Link key={link.title} href={link.link}>
+                {link.title}
+              </Link>
+            ))}
+          </div>
+        </div>
+      </div>
+      <div className="flex items-center gap-6 justify-center">
+        <Search />
+        <div>
+          <IoNotificationsOutline className="text-[24px] cursor-pointer" />
+        </div>
+        <div>
+          <Image
+            src={"/default-green.png"}
+            alt="profile"
+            width={35}
+            height={35}
+            className="rounded-md cursor-pointer"
           />
         </div>
       </div>
-    </header>
+    </nav>
   );
 };
 

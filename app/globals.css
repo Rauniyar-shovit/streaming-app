@@ -45,3 +45,11 @@ body {
 .banner_video {
   @apply border-2 border-white;
 }
+
+.modal_btn {
+  @apply flex justify-center items-center rounded-full border-[2px] border-primary-black-300 hover:border-white p-2 bg-primary-black-300 bg-opacity-25 cursor-pointer;
+}
+
+.modal_btn_icons {
+  @apply text-xl 3xl:text-2xl;
+}

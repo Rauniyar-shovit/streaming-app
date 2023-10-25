@@ -6,7 +6,7 @@ import FAQs from "./FAQs";
 import FaqContent from "./FaqContent";
 import FaqCard from "./FaqCard";
 import Footer from "./Footer";
-import Navbar from "./Navbar";
+import HomeNavbar from "./HomeNavbar";
 import Button from "./Button";
 import RenderFeaturedVideo from "./RenderFeaturedVideo";
 import Background from "./Background";
@@ -15,10 +15,13 @@ import SignInForm from "./SignInForm";
 import Form from "./Form";
 import ProfileCard from "./ProfileCard";
 import AddProfile from "./AddProfile";
-import BrowseNavbar from "./BrowseNavbar";
+import Navbar from "./Navbar";
 import Search from "./Search";
-import BannerVideo from "./BannerVideo";
-import BannerDetail from "./BannerDetail";
+import Banner from "./Banner";
+import PlayButton from "./PlayButton";
+import MoreInfoButton from "./MoreInfoButton";
+import MovieModalContent from "./MovieModalContent";
+import AddToMyList from "./AddToMyList";
 
 export {
   Hero,
@@ -29,7 +32,7 @@ export {
   FaqContent,
   FaqCard,
   Footer,
-  Navbar,
+  HomeNavbar,
   Button,
   Download,
   RenderFeaturedVideo,
@@ -38,8 +41,11 @@ export {
   Form,
   ProfileCard,
   AddProfile,
-  BrowseNavbar,
+  Navbar,
   Search,
-  BannerVideo,
-  BannerDetail,
+  Banner,
+  PlayButton,
+  MoreInfoButton,
+  MovieModalContent,
+  AddToMyList,
 };

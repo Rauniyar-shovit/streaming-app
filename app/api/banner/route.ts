@@ -1,17 +1,57 @@
-import axios from "axios";
 import { NextResponse } from "next/server";
-import { randomNumber } from "@/utils/login";
-import { apiMoviesList } from "@/services/apiMoviesList";
-import { apiMovieVideo } from "@/services/apiMovieVideo";
-import { errorMonitor } from "stream";
+import { randomNumber } from "@/utils/randomNumber";
+import { apiShowVideo } from "@/services/apiShowVideo";
+import { apiShowDetail } from "@/services/apiShowDetail";
+import { apiShowsList } from "@/services/apiShowsList";
 export async function GET() {
   try {
-    const movies = await apiMoviesList();
-    const randomMovie = movies[randomNumber(movies?.length)];
-    const selectedMovieVideo = await apiMovieVideo(randomMovie.id);
+    const shows = await apiShowsList();
+    const randomShow = shows[randomNumber(shows?.length)];
 
-    return NextResponse.json({ randomMovie, selectedMovieVideo });
+    const res = await apiShowDetail(randomShow.id, randomShow.media_type);
+    let data;
+
+    const { id, genres, overview } = res;
+    if (randomShow.media_type === "tv") {
+      const {
+        last_air_date,
+        number_of_episodes,
+        number_of_seasons,
+        poster_path,
+        name,
+      } = res;
+      data = {
+        last_air_date,
+        number_of_episodes,
+        number_of_seasons,
+        poster_path,
+        title: name,
+      };
+    } else {
+      const { poster_path, release_date, runtime, title } = res;
+      data = {
+        poster_path,
+        release_date,
+        runtime,
+        title,
+      };
+    }
+
+    const showData = {
+      ...data,
+      mediaType: randomShow.media_type,
+      genres: genres.map((genres: any) => genres.name),
+      id,
+
+      overview,
+    };
+    const showTrailerKey = await apiShowVideo(
+      showData?.id,
+      randomShow.media_type
+    );
+
+    return NextResponse.json({ showData, showTrailerKey }, { status: 200 });
   } catch (err) {
-    console.log(errorMonitor);
+    console.log(err);
   }
 }

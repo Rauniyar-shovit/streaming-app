@@ -1,10 +1,9 @@
-import { FAQs, Features, Footer, Hero, Navbar } from "@/components";
-import { EmailContextProvider } from "@/context/EmailConext";
+import { FAQs, Features, Footer, Hero, HomeNavbar } from "@/components";
 
 export default function Home() {
   return (
     <main className="overflow-hidden">
-      <Navbar />
+      <HomeNavbar />
       <Hero />
       <Features />
       <FAQs />

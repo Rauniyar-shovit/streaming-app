@@ -53,16 +53,53 @@ export interface FormInputProps {
 }
 
 export interface ProfileData {
-  name: string;
+  profileName: string;
   image: string;
 }
 
-export interface BannerDetailProps {
-  title: string;
-  description: string;
+export interface BannerProps {
+  show: {
+    id: string;
+    genres: string;
+    overview: string;
+    last_air_date?: string;
+    number_of_episodes?: string;
+    number_of_seasons?: string;
+    title: string;
+    poster_path: string;
+    release_date?: string;
+    runtime?: string;
+    mediaType: string;
+  };
+  videoKey: string;
 }
 
-export interface BannerVideoProps {
+export interface Profile {
+  id: string;
+  name: string;
+  image: string;
+  userId: string;
+}
+
+export interface ProfileCardProps {
+  source: string;
+  profileName: string;
+  profileId: string;
+}
+
+export interface MovieObjType {
+  show: {
+    id: string;
+    genres: string;
+    overview: string;
+    last_air_date?: string;
+    number_of_episodes?: string;
+    number_of_seasons?: string;
+    title: string;
+    poster_path: string;
+    release_date?: string;
+    runtime?: string;
+    mediaType: string;
+  };
   videoKey: string;
-  children?: React.ReactNode;
 }

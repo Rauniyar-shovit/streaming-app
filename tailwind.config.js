@@ -21,6 +21,7 @@ module.exports = {
 
       "2xl": "1536px",
       // => @media (min-width: 1536px) { ... }
+      "3xl": "1836px",
     },
     extend: {
       backgroundImage: {
@@ -50,16 +51,19 @@ module.exports = {
         200: "rgba(0,0,0,0.6)",
         300: "#737373",
       },
-      white: "#FFFFFF",
+      white: { DEFAULT: "#FFFFFF", 100: "#FFFFFF", 200: "#BFC9CD" },
       gray: {
         100: "#1a1a1a",
         200: "#2D2D2D",
         300: "#4d4d4d",
         400: "#868e96",
         500: "#E4E4E4",
+        600: "rgba(73, 80, 87, 0.7)",
+        700: "rgba(73, 80, 87, 0.4)",
       },
       blue: { 100: "#339af0" },
       orange: { 100: "#E87C03" },
+      green: { 100: "#45D268" },
     },
   },
   plugins: [],

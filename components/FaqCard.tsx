@@ -1,6 +1,5 @@
 "use client";
 import { FaqProps } from "@/types";
-
 import React, { Fragment } from "react";
 import { HiPlus, HiXMark } from "react-icons/hi2";
 import { Collapse } from "react-collapse";
@@ -14,12 +13,7 @@ const FaqCard = ({ question, answer, open, onClick }: FaqProps) => {
         >
           <p className=" text-[24px]">{question}</p>
 
-          {/* <button
-            onClick={(e) => {
-              e.stopPropagation();
-              return setIsOpen((prev) => !prev);
-            }}
-          > */}
+       
 
           <button>
             {open ? (
