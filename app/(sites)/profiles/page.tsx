@@ -11,7 +11,7 @@ const Profiles = async () => {
   }
   const profiles = await fetchProfiles(session?.user?.email!);
 
-  if (profiles?.length === 0) {
+  if (!profiles || profiles?.length === 0) {
     redirect("/addProfile");
   }
 
