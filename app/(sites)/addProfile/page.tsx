@@ -14,6 +14,7 @@ const AddProfile = async () => {
   }
 
   const profiles = await fetchProfiles(session?.user?.email!);
+
   const profileChoices = chooseProfile(profiles);
 
   return (
