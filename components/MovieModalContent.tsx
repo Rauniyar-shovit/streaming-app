@@ -23,7 +23,7 @@ const MovieModalContent = ({ show }: { show: any }) => {
     axios
       .post("/api/cast", { id, mediaType })
       .then((res) => setCasts(res.data.casts));
-  }, []);
+  }, [id, mediaType]);
 
   return (
     <div className="w-full ">
