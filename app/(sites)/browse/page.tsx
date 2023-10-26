@@ -16,7 +16,6 @@ const Browse = async () => {
   const {
     data: { showData, showTrailerKey },
   } = await axios.get("http://127.0.0.1:3000/api/banner");
-  // console.log("browse -----------------", showData, showTrailerKey);
 
   return (
     <>
