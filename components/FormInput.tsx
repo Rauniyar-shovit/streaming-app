@@ -20,9 +20,11 @@ const FormInput = ({
         value={value}
         type={type}
         placeholder={placeHolder}
-        className={className}
+        className={`${className} ${
+          errorMessage ? "border-b-orange-100 border-b-2" : ""
+        }`}
         // className={`px-5 py-3 bg-gray-300 rounded-md focus:outline-none text-lg   w-full border-b-[2px] border-primary-black-100
-        // ${errorMessage ? "border-b-orange-100 " : ""}`}
+        // `}
         {...register(`${id}` as any, {
           required: required,
           ...validation,
@@ -31,7 +33,7 @@ const FormInput = ({
       />
 
       {errorMessage && (
-        <p className="absolute mt-[5px]   text-orange-100 text-[13px]">
+        <p className=" mt-[5px]   text-orange-100 text-[13px]">
           {errorMessage}
         </p>
       )}

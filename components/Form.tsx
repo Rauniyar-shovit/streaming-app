@@ -46,7 +46,7 @@ const Form = () => {
 
   return (
     <form onSubmit={onSubmit} className=" flex flex-col gap-14">
-      <div className="flex flex-col gap-8 ">
+      <div className="flex flex-col gap-4 ">
         {signInError && (
           <div className="bg-orange-100 px-4 py-2 rounded-md text-sm">
             {signInError}
@@ -66,6 +66,7 @@ const Form = () => {
               message: "Please enter a valid email",
             },
           }}
+          className="px-5 py-3 bg-gray-300 rounded focus:outline-none text-lg   w-full "
         />
 
         <FormInput
@@ -80,13 +81,14 @@ const Form = () => {
               (value.length >= 4 && value.length <= 60) ||
               "Your password must contain between 4 and 60 characters.",
           }}
+          className="px-5 py-3 bg-gray-300 rounded focus:outline-none text-lg   w-full "
         />
       </div>
       <Button
         isLoading={isSubmitting}
         type="submit"
         title="Login"
-        className="py-3 text-lg"
+        className="py-3 text-base font-medium"
       />
 
       <div className="flex flex-row items-center gap-4 mt-2 justify-center">

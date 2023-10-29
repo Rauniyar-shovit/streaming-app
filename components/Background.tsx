@@ -20,7 +20,7 @@ const Background = ({ children, src, className }: props) => {
         className="-z-20 "
       />
 
-      <div className="w-full h-full absolute bg-primary-black  -z-10 opacity-60" />
+      <div className="w-full h-full absolute bg-[#000]  -z-10 opacity-100 sm:opacity-60" />
       {children}
     </div>
   );

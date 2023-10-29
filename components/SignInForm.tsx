@@ -10,8 +10,8 @@ type FormValues = {
 const SignInForm = () => {
   return (
     <>
-      <div className="mt-28 bg-primary-black-200 rounded z-10 ">
-        <div className="px-16 pt-16 pb-32  flex flex-col gap-8   sm:w-[460px]">
+      <div className="mt-28 sm:bg-primary-black-200 rounded z-10 ">
+        <div className="sm:px-16 px-5 sm:pt-16 sm:pb-32 pb-16  flex flex-col gap-8   sm:w-[460px]">
           <h1 className="text-4xl font-[600] tracking-tight ">Sign in</h1>
 
           <Form />

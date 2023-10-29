@@ -75,6 +75,7 @@ const Page = () => {
                   (value.length >= 4 && value.length <= 10) ||
                   "Your Username must contain between 4 and 10 characters.",
               }}
+              className=""
             />
 
             <FormInput
