@@ -15,7 +15,7 @@ const FaqContent = () => {
   };
 
   return (
-    <div className="flex flex-col gap-2 mt-10 ">
+    <div className="flex flex-col gap-2 mt-10 mx-2">
       {faqs.map((faq, index) => (
         <FaqCard
           key={faq.question}

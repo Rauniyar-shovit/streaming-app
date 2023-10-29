@@ -6,23 +6,35 @@ import { MovieModalContext } from "@/context/MovieModalContext";
 import { IoCloseCircleSharp } from "react-icons/io5";
 import { AddToMyList, MovieModalContent, PlayButton } from ".";
 import { BsHandThumbsUp } from "react-icons/bs";
-
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
+import { mutate } from "swr";
+import { MyListContext } from "@/context/MyListContext";
 
 const MovieModal = () => {
   const { isOpen, setIsOpen, currentMovie } = useContext(MovieModalContext);
+  const { myList } = useContext(MyListContext);
+  console.log(myList);
 
   const [movieAdded, setMovieAdded] = useState(false);
 
   const searchParams = useSearchParams();
+
+  const existsOnList = myList?.find(
+    (show: any) => show.showId === currentMovie?.show.id
+  )
+    ? true
+    : false;
+
+  const profileId = searchParams.get("id");
+
+  console.log(existsOnList);
 
   const closeModalHandler = () => {
     setIsOpen(false);
   };
 
   const addToMyListHandler = async () => {
-    const profileId = searchParams.get("id");
     const res = await axios.post("api/addToList", {
       show: currentMovie,
       profileId,
@@ -30,6 +42,19 @@ const MovieModal = () => {
 
     if (res.status === 200) {
       setMovieAdded(true);
+      mutate("/api/fetchMyList");
+    }
+  };
+
+  const deleteFromMyListHandler = async () => {
+    const res = await axios.post("api/deleteFromMyList", {
+      showId: currentMovie?.show.id,
+      profileId,
+    });
+
+    if (res.status === 200) {
+      setMovieAdded(false);
+      mutate("/api/fetchMyList");
     }
   };
 
@@ -80,6 +105,8 @@ const MovieModal = () => {
                         btnClassName="px-4 py-1 "
                       />
                       <AddToMyList
+                        deleteFromMyList={deleteFromMyListHandler}
+                        existsOnList={existsOnList}
                         addToMyList={addToMyListHandler}
                         movieAdded={movieAdded}
                       />

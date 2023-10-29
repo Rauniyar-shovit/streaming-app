@@ -30,38 +30,40 @@ const GetStarted = ({ className }: GetStartedProps) => {
   });
   return (
     <div className={`flex flex-col flex-center ${className}`}>
-      <p className="text-[18px]  text-normal mt-4 ">{getStartedContet.title}</p>
+      <p className="text-[18px] text-center  text-normal mt-4 ">
+        {getStartedContet.title}
+      </p>
 
-      <form onSubmit={onSubmit} className="flex  mt-4 gap-3">
-        {/* <input
-          type="text"
-          id="email"
-          placeholder="Email address"
-          className="p-3 w-80 rounded bg-primary-black-100  border-[1px] border-white text-white  placeholder:opacity-100 bg-opacity-40 focus focus:border-primary-red-100"
-        /> */}
-
-        <FormInput
-          type="text"
-          placeHolder="Email"
-          errors={errors}
-          id="email"
-          register={register}
-          required={true}
-          validation={{
-            pattern: {
-              value:
-                /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-              message: "Please enter a valid email",
-            },
-          }}
-        />
-
-        <Button
-          type="submit"
-          htmlFor="email"
-          title="Get Started"
-          className=" text-2xl font-medimum  px-5 py-2.5"
-        />
+      <form
+        onSubmit={onSubmit}
+        className="flex flex-col sm:flex-row mt-4 gap-3 justify-center items-center w-full"
+      >
+        <div className="sm:w-[60%]  w-[90%] max-w-[500px] ">
+          <FormInput
+            type="text"
+            placeHolder="Email address"
+            className="p-3 w-full rounded bg-primary-black-100  border-[1px] border-white text-white  placeholder:opacity-100 bg-opacity-40 "
+            errors={errors}
+            id="email"
+            register={register}
+            required={true}
+            validation={{
+              pattern: {
+                value:
+                  /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                message: "Please enter a valid email",
+              },
+            }}
+          />
+        </div>
+        <div>
+          <Button
+            type="submit"
+            htmlFor="email"
+            title="Get Started"
+            className=" text-xl sm:text-2xl sm:font-bold font-md px-5 py-2.5"
+          />
+        </div>
       </form>
     </div>
   );

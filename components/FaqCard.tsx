@@ -11,21 +11,19 @@ const FaqCard = ({ question, answer, open, onClick }: FaqProps) => {
           onClick={onClick}
           className=" bg-gray-200 cursor-pointer hover:bg-gray-300 flex  p-6 transition-all duration-300  justify-between items-center"
         >
-          <p className=" text-[24px]">{question}</p>
-
-       
+          <p className="faq_content_font">{question}</p>
 
           <button>
             {open ? (
-              <HiXMark className="text-[35px] " />
+              <HiXMark className="faq_open_close" />
             ) : (
-              <HiPlus className="text-[35px] " />
+              <HiPlus className="faq_open_close " />
             )}
           </button>
         </div>
 
         <Collapse isOpened={open}>
-          <div className="bg-gray-200 p-6 text-[22px] font-light">
+          <div className="bg-gray-200 p-6 faq_content_font tracking-tight">
             {answer.split("\n").map((text, i) => (
               <Fragment key={i}>
                 <p>{text}</p> <br />

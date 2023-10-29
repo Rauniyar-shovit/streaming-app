@@ -8,12 +8,14 @@ const Hero = () => {
         src="/hero.jpg"
         className=" h-[100vh] flex justify-center items-center  flex-col"
       >
-        <CustomContent
-          title={heroContent.title}
-          description={heroContent.description}
-          containerStyles="flex flex-col justify-center items-center"
-        />
-        <GetStarted />
+        <div className="w-full h-full flex justify-center items-center flex-col px-6">
+          <CustomContent
+            title={heroContent.title}
+            description={heroContent.description}
+            containerStyles="flex flex-col justify-center items-center text-center"
+          />
+          <GetStarted />
+        </div>
       </Background>
     </div>
   );

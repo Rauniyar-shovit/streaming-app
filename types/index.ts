@@ -8,6 +8,7 @@ export interface CustomContentProps {
   description: string;
   subDescription?: string;
   containerStyles?: string;
+  titleStyle?: string;
 }
 
 export interface FeatureSectionProps {
@@ -50,6 +51,8 @@ export interface FormInputProps {
     | {
         validate: (value: string) => string | boolean;
       };
+
+  className?: string;
 }
 
 export interface ProfileData {

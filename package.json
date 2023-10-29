@@ -33,7 +33,7 @@
     "react-icons": "^4.10.1",
     "react-multi-carousel": "^2.8.4",
     "react-player": "^2.13.0",
-    "swr": "^2.2.2",
+    "swr": "^2.2.4",
     "tailwindcss": "3.3.3",
     "typescript": "5.1.6"
   },

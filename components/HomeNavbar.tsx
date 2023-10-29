@@ -9,10 +9,12 @@ const HomeNavbar = () => {
   const router = useRouter();
   return (
     <header>
-      <div className="w-[80%] absolute top-8 left-1/2 -translate-x-1/2 z-10">
+      <div className="center_div absolute top-8 left-1/2 -translate-x-1/2 z-10">
         <div className="flex items-center justify-between">
           <Link href="/">
-            <Image src="/logo.svg" width={150} height={100} alt="logo" />
+            <div className="relative lg:h-20 lg:w-40  h-8 w-24">
+              <Image src="/logo.svg" layout="fill" alt="logo" />
+            </div>
           </Link>
           <Button
             title="Sign in"

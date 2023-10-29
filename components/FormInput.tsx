@@ -11,6 +11,7 @@ const FormInput = ({
   validation,
   value,
   onChange,
+  className,
 }: FormInputProps) => {
   const errorMessage = errors[id as keyof FormData]?.message;
   return (
@@ -19,8 +20,9 @@ const FormInput = ({
         value={value}
         type={type}
         placeholder={placeHolder}
-        className={`px-5 py-3 bg-gray-300 rounded-md focus:outline-none text-lg   w-full border-b-[2px] border-primary-black-100 
-${errorMessage ? "border-b-orange-100 " : ""}`}
+        className={className}
+        // className={`px-5 py-3 bg-gray-300 rounded-md focus:outline-none text-lg   w-full border-b-[2px] border-primary-black-100
+        // ${errorMessage ? "border-b-orange-100 " : ""}`}
         {...register(`${id}` as any, {
           required: required,
           ...validation,
