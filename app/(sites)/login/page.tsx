@@ -10,6 +10,7 @@ const Login = () => {
       <Background
         src="/hero.jpg"
         className="min-h-[100vh] flex flex-col gap-16 "
+        overlayStyles="opacity-100 sm:opacity-60"
       >
         <div className="absolute top-6 sm:top-4  left-4 sm:left-6  2xl:left-16 z-10">
           <Link href="/">

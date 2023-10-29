@@ -7,8 +7,9 @@ interface props {
   children?: React.ReactNode;
   src: string;
   className?: string;
+  overlayStyles?: string;
 }
-const Background = ({ children, src, className }: props) => {
+const Background = ({ children, src, className, overlayStyles }: props) => {
   return (
     <div className={`${className} relative `}>
       <Image
@@ -20,7 +21,9 @@ const Background = ({ children, src, className }: props) => {
         className="-z-20 "
       />
 
-      <div className="w-full h-full absolute bg-[#000]  -z-10 opacity-100 sm:opacity-60" />
+      <div
+        className={`w-full h-full absolute bg-[#000]  -z-10 ${overlayStyles}`}
+      />
       {children}
     </div>
   );

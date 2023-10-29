@@ -7,6 +7,7 @@ const Hero = () => {
       <Background
         src="/hero.jpg"
         className=" h-[100vh] flex justify-center items-center  flex-col"
+        overlayStyles="opacity-60"
       >
         <div className="w-full h-full flex justify-center items-center flex-col px-6">
           <CustomContent
