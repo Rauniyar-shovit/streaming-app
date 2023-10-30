@@ -39,110 +39,116 @@ const Page = () => {
 
   return (
     <>
-      <nav className="flex justify-between items-center my-5 mx-20">
+      <nav className="flex justify-between items-center py-3 px-6 border-b-[1px] border-gray-300 bg-[#000]">
         <Link href="/">
-          <Image src="/logo.svg" width={175} height={80} alt="logo" />
+          <div className="relative sm:h-20 sm:w-40  h-7 w-20">
+            <Image src="/logo.svg" layout="fill" alt="logo" />
+          </div>
         </Link>
 
         <div className=" mb-[1px] border-b-[2px] border-primary-black hover:border-white ">
           <Link href="/login">
-            <p className="text-xl">Signin</p>
+            <p className="text-base sm:text-xl">Signin</p>
           </Link>
         </div>
       </nav>
 
-      <div className="min-h-[100vh] flex flex-col">
-        <div className="max-w-[420px] mx-auto mt-28 mb-20 ">
+      <div className="min-h-[100vh] flex flex-col bg-[#000]">
+        <div className="sm:max-w-[420px] sm:mx-auto sm:mt-28 sm:mb-20 mt-20 mb-16  ">
           <form
             onSubmit={handleSubmit((data) => registerUser(data))}
             className=" flex flex-col gap-10 "
           >
-            <h1 className="text-2xl">
-              Create an Account to start your membership
-            </h1>
+            <div className="px-5 flex gap-4 flex-col  justify-center">
+              <h1 className="text-lg sm:text-xl font-bold">
+                Create an Account to start your membership
+              </h1>
 
-            <p className=" text-orange-100 text-xl">{responseMessage}</p>
+              <p className=" text-orange-100 text-xl">{responseMessage}</p>
 
-            <FormInput
-              type="text"
-              placeHolder={"Username"}
-              errors={errors}
-              id="name"
-              register={register}
-              required={true}
-              validation={{
-                validate: (value: string) =>
-                  (value.length >= 4 && value.length <= 10) ||
-                  "Your Username must contain between 4 and 10 characters.",
-              }}
-              className=""
-            />
+              <FormInput
+                type="text"
+                placeHolder={"Username"}
+                errors={errors}
+                id="name"
+                register={register}
+                required={true}
+                validation={{
+                  validate: (value: string) =>
+                    (value.length >= 4 && value.length <= 10) ||
+                    "Your Username must contain between 4 and 10 characters.",
+                }}
+                className="px-5 py-3 bg-gray-300 rounded focus:outline-none text-lg   w-full "
+              />
 
-            <FormInput
-              value={ctx.email || ""}
-              onChange={(e) =>
-                ctx.setEmail((e.target as HTMLInputElement).value)
-              }
-              type="text"
-              placeHolder={"Email"}
-              errors={errors}
-              id="email"
-              register={register}
-              required={true}
-              validation={{
-                pattern: {
-                  value:
-                    /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
-                  message: "Please enter a valid email",
-                },
-              }}
-            />
+              <FormInput
+                value={ctx.email || ""}
+                onChange={(e) =>
+                  ctx.setEmail((e.target as HTMLInputElement).value)
+                }
+                type="text"
+                placeHolder={"Email"}
+                errors={errors}
+                id="email"
+                register={register}
+                required={true}
+                validation={{
+                  pattern: {
+                    value:
+                      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+                    message: "Please enter a valid email",
+                  },
+                }}
+                className="px-5 py-3 bg-gray-300 rounded focus:outline-none text-lg   w-full "
+              />
 
-            <FormInput
-              type="password"
-              placeHolder={"Password"}
-              errors={errors}
-              id="password"
-              register={register}
-              required={true}
-              validation={{
-                validate: (value: string) => {
-                  if (value.includes(" ")) {
-                    return "Password cannot have space";
-                  }
+              <FormInput
+                type="password"
+                placeHolder={"Password"}
+                errors={errors}
+                id="password"
+                register={register}
+                required={true}
+                validation={{
+                  validate: (value: string) => {
+                    if (value.includes(" ")) {
+                      return "Password cannot have space";
+                    }
 
-                  if (value.length >= 4 && value.length <= 60) {
-                    return true;
-                  } else {
-                    return "Your password must contain between 4 and 60 characters.";
-                  }
-                },
-              }}
-            />
+                    if (value.length >= 4 && value.length <= 60) {
+                      return true;
+                    } else {
+                      return "Your password must contain between 4 and 60 characters.";
+                    }
+                  },
+                }}
+                className="px-5 py-3 bg-gray-300 rounded focus:outline-none text-lg   w-full "
+              />
 
-            <Button
-              isLoading={isSubmitting}
-              type="submit"
-              title="Signup"
-              className=" text-2xl font-medimum  px-5 py-2.5"
-            />
+              <Button
+                isLoading={isSubmitting}
+                type="submit"
+                title="Sign up"
+                className="text-lg sm:text-xl font-medimum  px-5 py-2.5 mt-7"
+              />
 
-            <p className="text-gray-400">
-              Already have an account?{" "}
-              <Link
-                href="/login"
-                className="text-white border-b-[1px]  border-primary-black hover:border-white"
-              >
-                Login
-              </Link>
-            </p>
+              <p className="text-gray-400 text-base sm:text-lg mt-3">
+                Already have an account?{" "}
+                <Link
+                  href="/login"
+                  className="text-white border-b-[1px]  border-primary-black hover:border-white"
+                >
+                  Login
+                </Link>
+              </p>
+            </div>
           </form>
         </div>
 
-        <div className="mt-auto z-10 bg-primary-black-200 w-full flex flex-center text-primary-black-300 gap-8 py-10 my-11 ">
+        <div className="mt-auto z-10 bg-primary-black-200 w-full flex flex-center text-primary-black-300 gap-8 py-10 my-11 px-3 border-t-[1px] border-gray-300 ">
           <div>
             <p className="mb-8">Questions? Phone 1 800 404 982</p>
-            <div className="grid grid-cols-4 gap-y-2 gap-x-20">
+            <div className="grid lg:grid-cols-4 sm:grid-cols-3 grid-cols-2 gap-y-2 gap-x-20">
               {links.map((link) => (
                 <Link key={link.title} href={link.link} className="text-[13px]">
                   {link.title}
