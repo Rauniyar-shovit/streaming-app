@@ -10,9 +10,11 @@ const AddProfile = () => {
       onClick={() => router.push("/addProfile")}
       className="flex flex-col justify-center items-center   ease-in profile_container cursor-pointer "
     >
-      <BsPersonFillAdd className="rounded-md mb-3 w-32 h-32 text-gray-400 hover:bg-gray-500" />
+      <BsPersonFillAdd className="rounded-md mb-1 profile_icon  text-gray-400 hover:bg-gray-500 border-[1px] border-gray-300" />
 
-      <p className="text-center text-gray-300 ease-in">Add profile</p>
+      <p className="text-center text-sm lg:text-base text-gray-400 ease-in">
+        Add profile
+      </p>
     </div>
   );
 };

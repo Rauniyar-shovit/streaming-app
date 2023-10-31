@@ -5,6 +5,7 @@ import { Inter } from "next/font/google";
 import Provider from "@/context/Provider";
 import { MovieModalContextProvider } from "@/context/MovieModalContext";
 import { MyListContextProvider } from "@/context/MyListContext";
+import { MyProfileContextProvider } from "@/context/ProfileContext";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -22,11 +23,13 @@ export default function RootLayout({
     <html lang="en">
       <Provider>
         <EmailContextProvider>
-          <MyListContextProvider>
-            <MovieModalContextProvider>
-              <body className={`${inter.className} `}>{children}</body>
-            </MovieModalContextProvider>
-          </MyListContextProvider>
+          <MyProfileContextProvider>
+            <MyListContextProvider>
+              <MovieModalContextProvider>
+                <body className={`${inter.className} `}>{children}</body>
+              </MovieModalContextProvider>
+            </MyListContextProvider>
+          </MyProfileContextProvider>
         </EmailContextProvider>
       </Provider>
     </html>

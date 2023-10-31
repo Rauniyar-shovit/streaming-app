@@ -3,20 +3,23 @@ import { ProfileData } from "@/types";
 import axios from "axios";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useMemo } from "react";
 import { useForm } from "react-hook-form";
+import { mutate } from "swr";
 
 const AddProfileForm = ({
   userEmail,
   profileChoices,
 }: {
-  userEmail: string;
+  userEmail: string | null | undefined;
   profileChoices: string[];
 }) => {
-  const randomProfileImg =
-    profileChoices[Math.floor(Math.random() * profileChoices.length)];
+  const randomProfileImg = useMemo(() => {
+    return profileChoices[Math.floor(Math.random() * profileChoices.length)];
+  }, []);
 
   const router = useRouter();
+
   const {
     reset,
     register,
@@ -40,13 +43,20 @@ const AddProfileForm = ({
         ...profileData,
       });
 
-      reset();
+      if (status === 200) {
+        reset();
+        mutate("/api/fetchProfiles");
+        router.push("/profiles");
+      }
+
+      if (status === 422) {
+      }
 
       // if (status === 200) {
       //   router.push("/profiles");
       // }
     },
-    [axios]
+    [mutate]
   );
 
   const onSubmit = handleSubmit((data) =>
@@ -56,7 +66,6 @@ const AddProfileForm = ({
       randomProfileImg
     )
   );
-  console.log("=========== referesg");
   return (
     <form onSubmit={onSubmit}>
       <div className="flex gap-4 justify-center items-center py-4 border-y-[1px] border-gray-200 mb-4">

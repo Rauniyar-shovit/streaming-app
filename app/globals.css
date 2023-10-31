@@ -63,3 +63,7 @@ body {
 .faq_content_font {
   @apply text-lg lg:text-2xl;
 }
+
+.profile_icon {
+  @apply h-24 w-24 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 3xl:h-48 3xl:w-48;
+}

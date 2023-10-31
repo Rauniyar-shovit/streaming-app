@@ -18,14 +18,17 @@ const ProfileCard = ({ source, profileName, profileId }: ProfileCardProps) => {
       }
       className="flex flex-col  justify-center items-center ease-in profile_container cursor-pointer "
     >
-      <Image
-        src={source}
-        alt="profile"
-        width={130}
-        height={130}
-        className="mb-3 border-[2px] border-primary-black-400 rounded-md"
-      />
-      <p className="text-center text-gray-400 ease-in">{profileName}</p>
+      <div className="relative profile_icon">
+        <Image
+          src={source}
+          alt="profile"
+          layout="fill"
+          className="mb-3 border-[2px] border-primary-black-400 rounded-md"
+        />
+      </div>
+      <p className="mt-1.5 text-sm sm:text-base text-center text-gray-400 ease-in">
+        {profileName}
+      </p>
     </div>
   );
 };

@@ -22,6 +22,8 @@ import PlayButton from "./PlayButton";
 import MoreInfoButton from "./MoreInfoButton";
 import MovieModalContent from "./MovieModalContent";
 import AddToMyList from "./AddToMyList";
+import UserProfiles from "./UserProfiles";
+import AddUserProfile from "./AddUserProfile";
 
 export {
   Hero,
@@ -48,4 +50,6 @@ export {
   MoreInfoButton,
   MovieModalContent,
   AddToMyList,
+  UserProfiles,
+  AddUserProfile,
 };
