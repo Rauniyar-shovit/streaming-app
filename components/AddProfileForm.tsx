@@ -68,18 +68,19 @@ const AddProfileForm = ({
   );
   return (
     <form onSubmit={onSubmit}>
-      <div className="flex gap-4 justify-center items-center py-4 border-y-[1px] border-gray-200 mb-4">
-        <Image
-          src={randomProfileImg}
-          alt="profile"
-          width={110}
-          height={110}
-          className="mb-3 border-[2px] border-primary-black-400 rounded-md"
-        />
-        <div>
+      <div className="flex gap-4 lg:gap-6 3xl:gap-8 justify-center items-center py-4 border-y-[1px] border-gray-200 mb-6 sm:mb-7 2xl:mb-9 3xl:mb-12">
+        <div className=" relative h-20 w-20 sm:h-24 sm:w-24 lg:h-28 lg:w-28 2xl:h-32 2xl:w-32 3xl:h-40 3xl:w-40">
+          <Image
+            src={randomProfileImg}
+            alt="profile"
+            fill
+            className="mb-3 border-[2px] border-primary-black-400 rounded-md"
+          />
+        </div>
+        <div className="w-52 sm:w-64 lg:w-80 2xl:w-[22rem] 3xl:w-[32rem]">
           <input
             type="text"
-            className="bg-gray-200 focus:outline-none w-[300px] px-3 py-1"
+            className="bg-gray-200 focus:outline-none w-full px-2 py-1 2xl:px-4 2xl:py-2  3xl:px-5 3xl:py-3 text-sm sm:text-base 2xl:text-lg 3xl:text-4xl"
             placeholder="Name"
             {...register("profileName", { required: true })}
           />
@@ -93,7 +94,7 @@ const AddProfileForm = ({
       <div className="flex gap-4 ">
         <button
           type="submit"
-          className={`text-primary-black-100 font-medium text-sm px-6 py-2 hover:bg-primary-red hover:text-white ${
+          className={`text-primary-black-100 font-medium text-xs px-4 py-1.5 sm:px-5 sm:py-2 sm:text-sm  2xl:px-6 2xl:py-1.5 2xl:text-lg 3xl:px-12 3xl:py-4 3xl:text-2xl hover:bg-primary-red hover:text-white ${
             isSubmitting ? "bg-primary-red" : "bg-white "
           }`}
         >
@@ -107,7 +108,7 @@ const AddProfileForm = ({
         <button
           type="button"
           onClick={() => router.push("/profiles")}
-          className="border-[1px] border-gray-400 text-gray-400 text-sm bg-primary-black-200 px-5 py-2 hover:border-white hover:text-white"
+          className="border-[1px] border-gray-400 text-gray-400 text-xs bg-primary-black-200 px-4 py-1.5  sm:px-5 sm:py-2 sm:text-sm  2xl:px-6 2xl:py-1.5 2xl:text-lg 3xl:px-12 3xl:py-4 3xl:text-2xl hover:border-white hover:text-white"
         >
           Cancel
         </button>

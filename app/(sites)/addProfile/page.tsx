@@ -14,11 +14,7 @@ const AddProfile = async () => {
     redirect("/login");
   }
 
-  return (
-    <>
-      <AddUserProfile userEmail={session.user?.email} />
-    </>
-  );
+  return <AddUserProfile userEmail={session.user?.email} />;
 };
 
 export default AddProfile;

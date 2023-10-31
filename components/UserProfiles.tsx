@@ -5,9 +5,14 @@ import { AddProfile, ProfileCard } from ".";
 import Image from "next/image";
 import { useContext } from "react";
 import { MyProfileContext } from "@/context/ProfileContext";
+import { redirect } from "next/navigation";
 
 const UserProfiles = ({ email }: { email: any }) => {
   const { data: profiles, isLoading } = useProfiles(email);
+
+  if (!profiles) {
+    redirect("/addProfile");
+  }
 
   return (
     <>
