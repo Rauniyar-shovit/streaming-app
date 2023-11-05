@@ -12,11 +12,7 @@ const Profiles = async () => {
     redirect("/login");
   }
 
-  return (
-    <>
-      <UserProfiles email={session.user?.email} />
-    </>
-  );
+  return <UserProfiles email={session.user?.email} />;
 };
 
 export default Profiles;

@@ -10,6 +10,8 @@ const AddUserProfile = ({
   userEmail: string | null | undefined;
 }) => {
   const { myProfiles } = useContext(MyProfileContext);
+  console.log("My Profiles from add ", myProfiles);
+
   const profileChoices = chooseProfile(myProfiles);
   return (
     <div className="h-[100vh] flex flex-col items-center justify-center gap-8 ">

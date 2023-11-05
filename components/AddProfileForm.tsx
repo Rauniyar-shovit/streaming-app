@@ -56,7 +56,7 @@ const AddProfileForm = ({
       //   router.push("/profiles");
       // }
     },
-    [mutate]
+    []
   );
 
   const onSubmit = handleSubmit((data) =>

@@ -1,7 +1,7 @@
 "use client";
 import { MyProfileContext } from "@/context/ProfileContext";
 import axios from "axios";
-import { useContext } from "react";
+import { useContext, useEffect } from "react";
 import useSWR from "swr";
 
 const useProfiles = (email: string | null | undefined) => {
@@ -14,8 +14,7 @@ const useProfiles = (email: string | null | undefined) => {
       }),
     { revalidateOnFocus: false }
   );
-  console.log(data);
-  setMyProfiles(data);
+
   return { data, error, isLoading };
 };
 

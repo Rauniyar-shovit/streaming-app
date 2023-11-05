@@ -7,5 +7,5 @@ export const MyList = () => {
   const { myList, setMyList } = useContext(MyListContext);
   const data = useMyList();
   setMyList(data);
-  return <>MyList</>;
+  return <></>;
 };

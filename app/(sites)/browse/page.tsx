@@ -1,5 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { Banner, Navbar } from "@/components";
+import { Banner, MovieList, Navbar } from "@/components";
 import LogoutButton from "@/components/LogoutButton";
 import MovieModal from "@/components/MovieModal";
 import { MyList } from "@/components/MyList";
@@ -19,9 +19,12 @@ const Browse = async () => {
 
   return (
     <>
+      <MyList />
       <Navbar />
       <Banner show={showData} videoKey={showTrailerKey} />
-      <MyList />
+      <div className="pb-40">
+        <MovieList />
+      </div>
       <MovieModal />
 
       <LogoutButton />

@@ -22,7 +22,7 @@ const ProfileCard = ({ source, profileName, profileId }: ProfileCardProps) => {
         <Image
           src={source}
           alt="profile"
-          layout="fill"
+          fill
           className="mb-3 border-[2px] border-primary-black-400 rounded-md"
         />
       </div>

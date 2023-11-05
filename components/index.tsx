@@ -24,6 +24,7 @@ import MovieModalContent from "./MovieModalContent";
 import AddToMyList from "./AddToMyList";
 import UserProfiles from "./UserProfiles";
 import AddUserProfile from "./AddUserProfile";
+import MovieList from "./MovieList";
 
 export {
   Hero,
@@ -52,4 +53,5 @@ export {
   AddToMyList,
   UserProfiles,
   AddUserProfile,
+  MovieList,
 };

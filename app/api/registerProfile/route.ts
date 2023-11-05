@@ -4,6 +4,8 @@ export async function POST(req: Request) {
   try {
     const { profileName, userEmail, image } = await req.json();
 
+    console.log("apu regiseter profiule ", profileName, userEmail, image);
+
     const user = await prismadb.user.findUnique({
       where: { email: userEmail },
     });

@@ -10,12 +10,12 @@ interface profileObj {
 }
 
 interface ContextProps {
-  myProfiles: profileObj[];
+  myProfiles: profileObj[] | null;
   setMyProfiles: any;
 }
 
 const defaultValue: ContextProps = {
-  myProfiles: [],
+  myProfiles: null,
   setMyProfiles: null,
 };
 

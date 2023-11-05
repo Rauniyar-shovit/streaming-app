@@ -11,14 +11,11 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 flex w-[90%] mx-auto my-5 justify-between items-center z-30">
+    <nav className="fixed left-1/2 -translate-x-1/2 flex w-[90%] mx-auto my-0 justify-between items-center z-30">
       <div className=" flex xl:gap-12 gap-6 items-center">
-        <div className="block xl:hidden">
-          {!isOpen && <HiOutlineMenu className="text-3xl" />}
-        </div>
         <Link href={"/"}>
-          <div className="cursor-pointer">
-            <Image src="/logo.svg" width={90} height={100} alt="logo" />
+          <div className="cursor-pointer relative w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24">
+            <Image src="/logo.svg" fill alt="logo" />
           </div>
         </Link>
         <div className="hidden xl:block">
@@ -34,14 +31,13 @@ const Navbar = () => {
       <div className="flex items-center gap-6 justify-center">
         <Search />
         <div>
-          <IoNotificationsOutline className="text-[24px] cursor-pointer" />
+          <IoNotificationsOutline className="text-xl sm:text-2xl cursor-pointer " />
         </div>
-        <div>
+        <div className="relative w-8 h-8">
           <Image
             src={"/default-green.png"}
             alt="profile"
-            width={35}
-            height={35}
+            fill
             className="rounded-md cursor-pointer"
           />
         </div>

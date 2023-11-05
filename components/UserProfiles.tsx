@@ -3,16 +3,20 @@
 import useProfiles from "@/hooks/useProfiles";
 import { AddProfile, ProfileCard } from ".";
 import Image from "next/image";
-import { useContext } from "react";
-import { MyProfileContext } from "@/context/ProfileContext";
-import { redirect } from "next/navigation";
-
+import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 const UserProfiles = ({ email }: { email: any }) => {
-  const { data: profiles, isLoading } = useProfiles(email);
+  const router = useRouter();
 
-  if (!profiles) {
-    redirect("/addProfile");
-  }
+  const { data: profiles, error, isLoading } = useProfiles(email);
+
+  console.log("userProfiles page ", profiles);
+
+  useEffect(() => {
+    if (!isLoading && profiles?.length === 0) {
+      router.push("/addProfile");
+    }
+  }, [isLoading, profiles]);
 
   return (
     <>
