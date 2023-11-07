@@ -13,9 +13,9 @@ const Browse = async () => {
     redirect("/login");
   }
 
-  const {
-    data: { showData, showTrailerKey },
-  } = await axios.get("http://localhost:3000/api/banner");
+  // const {
+  //   data: { showData, showTrailerKey },
+  // } = await axios.get("http://localhost:3000/api/banner");
 
   return (
     <>
