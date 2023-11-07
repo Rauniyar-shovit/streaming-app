@@ -1,12 +1,12 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { Banner, MovieList, Navbar } from "@/components";
+import { Banner, MovieList, MovieLists, Navbar } from "@/components";
 import LogoutButton from "@/components/LogoutButton";
 import MovieModal from "@/components/MovieModal";
 import { MyList } from "@/components/MyList";
 import axios from "axios";
 import { getServerSession } from "next-auth";
 import { redirect } from "next/navigation";
-
+import { headers } from "next/headers";
 const Browse = async () => {
   const session = await getServerSession(authOptions);
   if (!session) {
@@ -15,18 +15,19 @@ const Browse = async () => {
 
   const {
     data: { showData, showTrailerKey },
-  } = await axios.get("/api/banner");
+  } = await axios.get("http://localhost:3000/api/banner");
 
   return (
     <>
-      <MyList />
+      {/* <MyList /> */}
       <Navbar />
-      <Banner show={showData} videoKey={showTrailerKey} />
-      <div className="pb-40">
-        <MovieList />
-      </div>
-      <MovieModal />
 
+      <Banner />
+
+      {/* <Banner show={showData} videoKey={showTrailerKey} /> */}
+
+      <MovieLists />
+      <MovieModal />
       <LogoutButton />
     </>
   );

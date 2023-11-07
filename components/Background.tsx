@@ -15,9 +15,8 @@ const Background = ({ children, src, className, overlayStyles }: props) => {
       <Image
         src={src}
         alt="background"
-        layout="fill"
-        objectFit="cover"
-        objectPosition="center"
+        fill
+        style={{ objectFit: "cover", objectPosition: "center" }}
         className="-z-20 "
       />
 

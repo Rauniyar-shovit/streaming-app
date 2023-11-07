@@ -13,7 +13,7 @@ const HomeNavbar = () => {
         <div className="flex items-center justify-between">
           <Link href="/">
             <div className="relative lg:h-20 lg:w-40  h-8 w-24">
-              <Image src="/logo.svg" layout="fill" alt="logo" />
+              <Image src="/logo.svg" fill alt="logo" />
             </div>
           </Link>
           <Button

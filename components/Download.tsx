@@ -8,7 +8,7 @@ const Download = () => {
       <div className="flex justify-between items-center gap-4 p-2">
         <div className="flex gap-4 flex-center">
           <div className="relative w-[37px] h-[45px]">
-            <Image src="/featuredDownload.png" layout="fill" alt="download" />
+            <Image src="/featuredDownload.png" fill alt="download" />
           </div>
 
           <div className="font-semibold text-sm">

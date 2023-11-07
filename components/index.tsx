@@ -25,8 +25,10 @@ import AddToMyList from "./AddToMyList";
 import UserProfiles from "./UserProfiles";
 import AddUserProfile from "./AddUserProfile";
 import MovieList from "./MovieList";
+import MovieLists from "./MovieLists";
 
 export {
+  MovieLists,
   Hero,
   CustomContent,
   GetStarted,
