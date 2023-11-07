@@ -12,13 +12,13 @@ const Banner = () => {
   const [videoKey, setVideoKey] = useState<undefined | any>();
 
   const { data, isLoading } = useBanner();
+  console.log(data);
 
   useEffect(() => {
     setShow(data?.showData);
     setVideoKey(data?.showTrailerKey);
   }, [data]);
-
-  console.log(show, videoKey);
+  console.log(show);
 
   const { setCurrentMovie } = useContext(MovieModalContext);
 
