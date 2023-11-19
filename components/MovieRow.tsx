@@ -36,14 +36,14 @@ const MovieRow = () => {
           onClick={() => handleClick("left")}
         />
 
-        <div
+        {/* <div
           ref={rowRef}
           className="flex items-center space-x-0.5 overflow-x-scroll scrollbar-hide md:space-x-2.5 md:p-2"
         >
           {movies.map((movie: any) => (
             <Thumbnail />
           ))}
-        </div>
+        </div> */}
 
         <BsChevronRight
           className="absolute top-0 bottom-0 right-2 z-40 m-auto h-9 w-9 cursor-pointer  transition hover:scale-125 group-hover:opacity-100"
