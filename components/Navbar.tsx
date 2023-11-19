@@ -11,7 +11,7 @@ const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="fixed left-1/2 -translate-x-1/2 flex w-[90%] mx-auto my-0 justify-between items-center z-30">
+    <nav className="fixed left-1/2 -translate-x-1/2 flex w-[92%] mx-auto my-0 justify-between items-center z-30">
       <div className=" flex xl:gap-12 gap-6 items-center">
         <Link href={"/"}>
           <div className="cursor-pointer relative w-14 h-14 sm:w-20 sm:h-20 lg:w-24 lg:h-24">

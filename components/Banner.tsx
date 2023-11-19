@@ -12,13 +12,11 @@ const Banner = () => {
   const [videoKey, setVideoKey] = useState<undefined | any>();
 
   const { data, isLoading } = useBanner();
-  console.log(data);
 
   useEffect(() => {
     setShow(data?.showData);
     setVideoKey(data?.showTrailerKey);
   }, [data]);
-  console.log(show);
 
   const { setCurrentMovie } = useContext(MovieModalContext);
 
@@ -45,7 +43,7 @@ const Banner = () => {
         />
       )}
       <div
-        className="absolute  flex z-20 mx-auto w-[90%]  bottom-[10%] 2xl:bottom-[18%] 3xl:bottom-[32%] left-1/2 -translate-x-1/2
+        className="absolute  flex z-20 mx-auto w-[92%]  bottom-[10%] 2xl:bottom-[18%] 3xl:bottom-[32%] left-1/2 -translate-x-1/2
       "
       >
         <div className="w-[500px] ">

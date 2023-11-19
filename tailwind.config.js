@@ -52,7 +52,12 @@ module.exports = {
         200: "rgba(0,0,0,0.6)",
         300: "#737373",
       },
-      white: { DEFAULT: "#FFFFFF", 100: "#FFFFFF", 200: "#BFC9CD" },
+      white: {
+        DEFAULT: "#FFFFFF",
+        100: "#FFFFFF",
+        200: "#BFC9CD",
+        300: "#e9ecef",
+      },
       gray: {
         100: "#1a1a1a",
         200: "#2D2D2D",
@@ -65,7 +70,8 @@ module.exports = {
       blue: { 100: "#339af0" },
       orange: { 100: "#E87C03" },
       green: { 100: "#45D268" },
+      zinc: { 900: "rgb(24 24 27)" },
     },
   },
-  plugins: [],
+  plugins: [require("tailwind-scrollbar-hide"), require("tailwind-scrollbar")],
 };

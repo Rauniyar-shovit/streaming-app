@@ -24,11 +24,11 @@ import MovieModalContent from "./MovieModalContent";
 import AddToMyList from "./AddToMyList";
 import UserProfiles from "./UserProfiles";
 import AddUserProfile from "./AddUserProfile";
-import MovieList from "./MovieList";
-import MovieLists from "./MovieLists";
+import MovieCard from "./MovieCard";
+import MovieRow from "./MovieRow";
+import Thumbnail from "./Thumbnail";
 
 export {
-  MovieLists,
   Hero,
   CustomContent,
   GetStarted,
@@ -55,5 +55,7 @@ export {
   AddToMyList,
   UserProfiles,
   AddUserProfile,
-  MovieList,
+  MovieCard,
+  MovieRow,
+  Thumbnail,
 };

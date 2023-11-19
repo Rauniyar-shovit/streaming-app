@@ -12,7 +12,7 @@ const useProfiles = (email: string | null | undefined) => {
       axios.post(url, { email }).then((res) => {
         return res.data.profiles;
       }),
-    { revalidateOnFocus: false }
+    { revalidateOnFocus: false, revalidateOnMount: true }
   );
 
   return { data, error, isLoading };

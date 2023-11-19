@@ -10,14 +10,6 @@ const UserProfiles = ({ email }: { email: any }) => {
 
   const { data: profiles, error, isLoading } = useProfiles(email);
 
-  console.log("userProfiles page ", profiles);
-
-  useEffect(() => {
-    if (!isLoading && profiles?.length === 0) {
-      router.push("/addProfile");
-    }
-  }, [isLoading, profiles]);
-
   return (
     <>
       <div className="h-[100vh] flex flex-col items-center justify-center mx-10">
