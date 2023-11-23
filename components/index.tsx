@@ -27,6 +27,8 @@ import AddUserProfile from "./AddUserProfile";
 import MovieCard from "./MovieCard";
 import MovieRow from "./MovieRow";
 import Thumbnail from "./Thumbnail";
+import ProfileMenu from "./ProfileMenu";
+import SignOut from "./SignOut";
 
 export {
   Hero,
@@ -58,4 +60,6 @@ export {
   MovieCard,
   MovieRow,
   Thumbnail,
+  ProfileMenu,
+  SignOut,
 };

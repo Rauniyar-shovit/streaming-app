@@ -28,7 +28,7 @@ const Banner = () => {
   };
 
   return (
-    <div className="relative 2xl:top-0 xl:-top-64 md:-top-40 -top-0 -z-60 w-full  h-full overflow-hidden aspect-video  pointer-events-none">
+    <div className="banner relative 2xl:top-0 xl:-top-64 md:-top-40 -top-0 -z-60 w-full  h-full overflow-hidden aspect-video  pointer-events-none">
       {isLoading && (
         <div className="absolute top-1/2  md:top-[70%] xl:top-[40%] left-1/2 -translate-x-1/2 -translate-y-1/2">
           <div className="relative w-8 h-8 sm:w-12 sm:h-12 xl:w-20 xl:h-20">

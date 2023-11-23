@@ -20,7 +20,7 @@ const AddProfileForm = ({
   }, []);
 
   const router = useRouter();
-  const { mutate } = useSWRConfig();
+
   const {
     reset,
     register,
@@ -32,29 +32,28 @@ const AddProfileForm = ({
     },
   });
 
-  const registerProfile = async (
-    profileName: string,
-    userEmail: string,
-    image: string
-  ) => {
-    const profileData = {
-      profileName,
-      userEmail,
-      image,
-    };
+  const registerProfile = useCallback(
+    async (profileName: string, userEmail: string, image: string) => {
+      const profileData = {
+        profileName,
+        userEmail,
+        image,
+      };
 
-    const { status } = await axios.post("/api/registerProfile", {
-      ...profileData,
-    });
+      const { status } = await axios.post("/api/registerProfile", {
+        ...profileData,
+      });
 
-    if (status === 200) {
-      reset();
-      router.push("/profiles");
-    }
+      if (status === 200) {
+        reset();
+        router.push("/profiles");
+      }
 
-    if (status === 422) {
-    }
-  };
+      if (status === 422) {
+      }
+    },
+    []
+  );
 
   const onSubmit = handleSubmit((data) =>
     registerProfile(
