@@ -1,8 +1,6 @@
 "use client";
-import { MyListContext } from "@/context/MyListContext";
 import axios from "axios";
 import { useSearchParams } from "next/navigation";
-import React, { useContext, useEffect, useState } from "react";
 import useSWR from "swr";
 
 const useMyList = () => {

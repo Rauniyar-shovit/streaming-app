@@ -7,7 +7,6 @@ const useMyProfile = (profileId: string) => {
     "/api/myProfile",
     (url: string) =>
       axios.post(url, { profileId }).then((res) => {
-        console.log("hook ", res.data);
         return res.data.profile;
       }),
     { revalidateOnFocus: false }

@@ -9,6 +9,7 @@ export async function POST(req: Request) {
     } = await req.json();
 
     console.log("APPPPPPPPPIIIIIII --------", showData.id, profileId, videoKey);
+
     const existingShow = await prismadb.movie.findFirst({
       where: { showId: showData.id, profileId },
     });
@@ -47,6 +48,7 @@ export async function POST(req: Request) {
       };
     }
     console.log("MMMMOOOVIE DATA --------------", movieData);
+
     const show = await prismadb.movie.create({
       data: {
         ...movieData,

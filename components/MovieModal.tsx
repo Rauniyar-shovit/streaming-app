@@ -14,10 +14,7 @@ import { MyListContext } from "@/context/MyListContext";
 const MovieModal = () => {
   const { isOpen, setIsOpen, currentMovie } = useContext(MovieModalContext);
   const { myList } = useContext(MyListContext);
-  console.log(myList);
-
   const [movieAdded, setMovieAdded] = useState(false);
-
   const searchParams = useSearchParams();
 
   const existsOnList = myList?.find(
@@ -47,6 +44,7 @@ const MovieModal = () => {
   };
 
   const deleteFromMyListHandler = async () => {
+    console.log("delete function");
     const res = await axios.post("api/deleteFromMyList", {
       showId: currentMovie?.show.id,
       profileId,
@@ -98,7 +96,9 @@ const MovieModal = () => {
                     >
                       <IoCloseCircleSharp className="text-4xl text-primary-black-300" />
                     </button>
-
+                    <h3 className=" absolute bottom-28 left-16  pointer-events-auto text-4xl font-bold">
+                      {currentMovie?.show?.title}
+                    </h3>
                     <div className="flex gap-3 absolute bottom-12 left-16  pointer-events-auto">
                       <PlayButton
                         btnTextClassName="font-medium"

@@ -1,13 +1,12 @@
 "use client";
-import { BannerProps } from "@/types";
+
 import React, { use, useContext, useEffect, useState } from "react";
 import { MoreInfoButton, PlayButton } from ".";
 import { MovieModalContext } from "@/context/MovieModalContext";
 import useBanner from "@/hooks/useBanner";
 import Image from "next/image";
-const Banner = () => {
-  // const Banner = ({ show, videoKey }: BannerProps) => {
 
+const Banner = () => {
   const [show, setShow] = useState<undefined | any>();
   const [videoKey, setVideoKey] = useState<undefined | any>();
 

@@ -6,7 +6,9 @@ import React, { useContext, useEffect } from "react";
 export const MyList = () => {
   const { myList, setMyList } = useContext(MyListContext);
   const data = useMyList();
-  setMyList(data);
+  useEffect(() => {
+    setMyList(data);
+  }, [data]);
 
   return <></>;
 };
