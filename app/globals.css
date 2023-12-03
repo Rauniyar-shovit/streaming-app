@@ -45,7 +45,7 @@ body {
 }
 
 .modal_btn {
-  @apply flex justify-center items-center rounded-full border-[2px] border-primary-black-300 hover:border-white p-2 bg-primary-black-300 bg-opacity-25 cursor-pointer;
+  @apply flex justify-center items-center rounded-full border-[2px] border-primary-black-300 hover:border-white p-1.5 sm:p-2 bg-primary-black-300 bg-opacity-25 cursor-pointer;
 }
 
 .modal_btn_icons {
@@ -66,81 +66,4 @@ body {
 
 .profile_icon {
   @apply h-24 w-24 lg:h-32 lg:w-32 2xl:h-40 2xl:w-40 3xl:h-48 3xl:w-48;
-}
-
-.square {
-  min-width: 450px;
-  min-height: 300px;
-  transition: transform 100ms ease-out, border-radius 200ms ease-out;
-}
-
-.square .cover {
-  width: 100%;
-  height: 300px;
-  border-radius: 10px 10px 0 0;
-  background-size: cover !important;
-  background-position: center !important;
-}
-
-.square .text {
-  display: none;
-  background: #181818;
-  color: #fff;
-  width: 100%;
-  height: fit-content;
-  padding: 5px;
-  box-sizing: border-box;
-  transition: opacity 300ms ease-out, border-radius 200ms ease-out;
-  border-radius: 0 0 10px 10px;
-}
-
-.square:hover {
-  border-radius: 10px;
-  transform: scale(1.5);
-  box-shadow: 0 0 2px #000a;
-}
-
-.square:hover .text {
-  display: block;
-}
-
-.square.one .cover {
-  background: url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg/320px-Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg),
-    skyblue;
-}
-
-.square.one:hover .cover {
-  background: url(https://media.giphy.com/media/lgcUUCXgC8mEo/giphy.gif),
-    url(https://upload.wikimedia.org/wikipedia/commons/thumb/0/02/Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg/320px-Arrestbygningen_ved_r%C3%A5d-_og_domhuset.jpg),
-    skyblue;
-}
-
-.preview_container {
-  transition: transform 100ms ease-out, border-radius 200ms ease-out;
-  min-width: 450px;
-  height: 500px;
-}
-
-.preview_container .preview__details {
-  display: none;
-  height: 100px;
-  background: #181818;
-  color: #fff;
-  width: 100%;
-  height: fit-content;
-  padding: 50px;
-  box-sizing: border-box;
-  transition: opacity 300ms ease-out, border-radius 200ms ease-out;
-  border-radius: 0 0 10px 10px;
-}
-
-.preview_container:hover .preview__details {
-  display: block;
-}
-
-.preview_container:hover {
-  border-radius: 10px;
-  transform: scale(1.5);
-  box-shadow: 0 0 2px #000a;
-  z-index: 9999;
 }

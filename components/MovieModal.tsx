@@ -72,7 +72,7 @@ const MovieModal = () => {
         </Transition.Child>
 
         <div className="fixed inset-0 overflow-y-auto z-[90]">
-          <div className="flex min-h-full items-start justify-center p-4 text-center">
+          <div className="flex min-h-full items-start justify-center pt-10 sm:p-4 text-center">
             <Transition.Child
               as={Fragment}
               enter="ease-out duration-300"
@@ -96,13 +96,14 @@ const MovieModal = () => {
                     >
                       <IoCloseCircleSharp className="text-4xl text-primary-black-300" />
                     </button>
-                    <h3 className=" absolute bottom-28 left-16  pointer-events-auto text-4xl font-bold">
+                    <h3 className=" absolute bottom-10 left-5  pointer-events-auto text-lg font-bold mb-3">
                       {currentMovie?.show?.title}
                     </h3>
-                    <div className="flex gap-3 absolute bottom-12 left-16  pointer-events-auto">
+                    <div className="flex gap-2 sm:gap-3 absolute bottom-3.5 left-5  pointer-events-auto">
                       <PlayButton
-                        btnTextClassName="font-medium"
-                        btnClassName="px-4 py-1 "
+                        btnTextClassName="text-xs"
+                        btnClassName="px-3 py-0.5 "
+                        iconClassName="text-xs"
                       />
                       <AddToMyList
                         deleteFromMyList={deleteFromMyListHandler}

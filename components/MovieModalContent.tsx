@@ -27,7 +27,7 @@ const MovieModalContent = ({ show }: { show: any }) => {
 
   return (
     <div className="w-full ">
-      <div className="flex gap-2 w-[90%] mx-auto mt-8  text-gray-400 text-sm">
+      <div className="flex gap-2 w-[85%] mx-auto mt-8  text-gray-400 text-sm">
         <p className="text-green-100 font-bold">95% match</p>
         <div>
           {(mediaType === "tv" ? last_air_date : release_date).slice(0, 4)}
@@ -40,11 +40,11 @@ const MovieModalContent = ({ show }: { show: any }) => {
             : `${Math.floor(runtime / 60)}h ${runtime % 60}m`}
         </div>
       </div>
-      <div className="flex items-start  gap-6 w-[90%] mx-auto text-sm my-8">
-        <div className="text-md">
+      <div className="flex  items-start  gap-6 w-[85%] mx-auto text-sm my-8">
+        <div className="text-md basis-[50%] ">
           <div>{overview}</div>
         </div>
-        <div className="flex flex-col">
+        <div className="basis-[50%] flex flex-col">
           <span className="text-gray-400">Casts: </span>
           {casts && casts?.join(", ")} and more{" "}
           <span className="text-gray-400">Genre: </span>
