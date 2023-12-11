@@ -2,7 +2,11 @@
 import axios from "axios";
 import useSWR from "swr";
 
-const useMovies = (url: string) => {
+const useMovies = (url: string | undefined) => {
+  if (!url) {
+    return { data: null };
+  }
+
   const { data, isLoading, error } = useSWR(
     url,
     (url: string) =>
