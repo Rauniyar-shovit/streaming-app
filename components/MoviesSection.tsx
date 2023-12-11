@@ -16,8 +16,11 @@ const MoviesSection = ({
   let movies: any;
 
   const { data } = useMovies(url);
+
   if (!data) {
     movies = movieDetails;
+  } else {
+    movies = data;
   }
 
   return (

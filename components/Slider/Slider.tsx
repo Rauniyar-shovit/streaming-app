@@ -223,7 +223,7 @@ const Slider = ({ movies }: { movies: any }) => {
   }
 
   return (
-    <div className="group px-[4%] mb-6 xl:mb-8 2xl:mb-12 overflow-x-hidden relative slider">
+    <div className="group px-[4%] mb-6 xl:mb-8 2xl:mb-12 overflow-visible relative slider">
       {sliderHasMoved && (
         <SliderControl arrowDirection={"left"} onClick={handlePrev} />
       )}
