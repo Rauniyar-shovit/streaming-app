@@ -11,7 +11,5 @@ export const MyList = () => {
     setMyList(data);
   }, [data]);
 
-  console.log("myList ", myList);
-
   return <MoviesSection title="My List" movieDetails={myList} />;
 };

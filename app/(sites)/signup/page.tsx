@@ -23,35 +23,38 @@ const Page = () => {
 
   const ctx = useContext(EmailContext);
 
-  const registerUser = useCallback(async (data: FormData) => {
-    try {
-      const customizedData = {
-        email: data.email.toLowerCase().trim(),
-        password: data.password,
-        name: data.name?.trim(),
-      };
+  const registerUser = useCallback(
+    async (data: FormData) => {
+      try {
+        const customizedData = {
+          email: data.email.toLowerCase().trim(),
+          password: data.password,
+          name: data.name?.trim(),
+        };
 
-      const { status } = await axios.post("/api/register", {
-        ...customizedData,
-      });
-
-      if (status === 200) {
-        const res = await login({
-          email: customizedData.email,
-          password: customizedData.password,
+        const { status } = await axios.post("/api/register", {
+          ...customizedData,
         });
 
-        if (res?.error !== null) {
-          setResponseMessage(res?.error);
+        if (status === 200) {
+          const res = await login({
+            email: customizedData.email,
+            password: customizedData.password,
+          });
+
+          if (res?.error !== null) {
+            setResponseMessage(res?.error);
+          }
+          if (res?.status === 200) {
+            router.push(res?.url!);
+          }
         }
-        if (res?.status === 200) {
-          router.push(res?.url!);
-        }
+      } catch (error) {
+        console.log(error);
       }
-    } catch (error) {
-      console.log(error);
-    }
-  }, []);
+    },
+    [router]
+  );
 
   return (
     <>

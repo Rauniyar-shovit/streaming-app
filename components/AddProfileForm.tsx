@@ -17,7 +17,7 @@ const AddProfileForm = ({
 }) => {
   const randomProfileImg = useMemo(() => {
     return profileChoices[Math.floor(Math.random() * profileChoices.length)];
-  }, []);
+  }, [profileChoices]);
 
   const router = useRouter();
 
@@ -52,7 +52,7 @@ const AddProfileForm = ({
       if (status === 422) {
       }
     },
-    []
+    [reset, router]
   );
 
   const onSubmit = handleSubmit((data) =>

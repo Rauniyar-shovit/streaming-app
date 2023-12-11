@@ -3,6 +3,12 @@ import React, { useEffect, useState } from "react";
 import Slider from "./Slider/Slider";
 import useMovies from "@/hooks/useMovies";
 import { MdOutlineKeyboardArrowRight } from "react-icons/md";
+
+const getMovies = (url: string) => {
+  const { data, isLoading } = useMovies(url);
+  return { data, isLoading };
+};
+
 const MoviesSection = ({
   title,
   url,
@@ -15,7 +21,7 @@ const MoviesSection = ({
   let movies: any;
 
   if (url) {
-    const { data, isLoading } = useMovies(url);
+    const { data, isLoading } = getMovies(url);
     movies = data;
   } else {
     movies = movieDetails;
