@@ -9,29 +9,45 @@ import Link from "next/link";
 import React, { useCallback, useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import axios from "axios";
-
+import { login } from "@/utils/login";
+import { useRouter } from "next/navigation";
 const Page = () => {
+  const router = useRouter();
   const {
     formState: { errors, isSubmitting },
     register,
     handleSubmit,
   } = useForm<FormData>();
 
-  const [responseMessage, setResponseMessage] = useState<null | string>(null);
+  const [responseMessage, setResponseMessage] = useState<undefined | string>();
 
   const ctx = useContext(EmailContext);
 
   const registerUser = useCallback(async (data: FormData) => {
     try {
       const customizedData = {
-        email: data.email.trim(),
+        email: data.email.toLowerCase().trim(),
         password: data.password,
         name: data.name?.trim(),
       };
 
-      const response = await axios.post("/api/register", { ...customizedData });
+      const { status } = await axios.post("/api/register", {
+        ...customizedData,
+      });
 
-      setResponseMessage(response.data);
+      if (status === 200) {
+        const res = await login({
+          email: customizedData.email,
+          password: customizedData.password,
+        });
+
+        if (res?.error !== null) {
+          setResponseMessage(res?.error);
+        }
+        if (res?.status === 200) {
+          router.push(res?.url!);
+        }
+      }
     } catch (error) {
       console.log(error);
     }

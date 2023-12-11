@@ -33,7 +33,7 @@ export async function POST(req: Request) {
         last_air_date: showData.last_air_date,
         number_of_episodes: showData.number_of_episodes,
         number_of_seasons: showData.number_of_seasons,
-        poster_path: showData.poster_path,
+        backdrop_path: showData.backdrop_path,
         title: showData.title,
       };
     } else {
@@ -41,7 +41,7 @@ export async function POST(req: Request) {
         showId: showData.id,
         genres: showData.genres,
         overview: showData.overview,
-        poster_path: showData.poster_path,
+        backdrop_path: showData.backdrop_path,
         release_date: showData.release_date,
         runtime: showData.runtime,
         title: showData.title,

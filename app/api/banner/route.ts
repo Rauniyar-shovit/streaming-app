@@ -10,27 +10,27 @@ export async function GET() {
 
     const res = await apiShowDetail(randomShow.id, randomShow.media_type);
     let data;
-
+    console.log("rrrrrrrrrrrreeessssss", res);
     const { id, genres, overview } = res;
     if (randomShow.media_type === "tv") {
       const {
         last_air_date,
         number_of_episodes,
         number_of_seasons,
-        poster_path,
+        backdrop_path,
         name,
       } = res;
       data = {
         last_air_date,
         number_of_episodes,
         number_of_seasons,
-        poster_path,
+        backdrop_path,
         title: name,
       };
     } else {
-      const { poster_path, release_date, runtime, title } = res;
+      const { backdrop_path, release_date, runtime, title } = res;
       data = {
-        poster_path,
+        backdrop_path,
         release_date,
         runtime,
         title,

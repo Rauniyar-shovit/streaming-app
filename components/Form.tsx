@@ -9,11 +9,10 @@ import { FormData } from "@/types";
 import { useRouter } from "next/navigation";
 import { FcGoogle } from "react-icons/fc";
 import { FaGithub } from "react-icons/fa6";
+import { login } from "@/utils/login";
 
 const Form = () => {
-  const [signInError, setSignInError] = useState<string | undefined | null>(
-    undefined
-  );
+  const [signInError, setSignInError] = useState<string | undefined>();
   const router = useRouter();
   const {
     register,
@@ -21,28 +20,25 @@ const Form = () => {
     handleSubmit,
   } = useForm<FormData>();
 
-  const login = useCallback(
-    async ({ email, password }: { email: string; password: string }) => {
-      try {
-        const res = await signIn("credentials", {
-          email,
-          password,
-          redirect: false,
-          callbackUrl: "/profiles",
-        });
-        setSignInError(() => res?.error);
+  const loginHandler = async ({
+    email,
+    password,
+  }: {
+    email: string;
+    password: string;
+  }) => {
+    const res = await login({ email, password });
 
-        if (res?.error === null) {
-          router.push("/profiles");
-        }
-      } catch (error) {
-        console.log(error);
-      }
-    },
-    [router]
-  );
+    if (res?.error !== null) {
+      setSignInError(res?.error);
+    }
 
-  const onSubmit = handleSubmit((data) => login({ ...data }));
+    if (res?.status === 200) {
+      router.push(res?.url!);
+    }
+  };
+
+  const onSubmit = handleSubmit((data) => loginHandler({ ...data }));
 
   return (
     <form onSubmit={onSubmit} className=" flex flex-col gap-14">

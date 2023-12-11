@@ -90,7 +90,7 @@ model Movie{
   number_of_episodes Int?
   number_of_seasons Int?
   title String
-  poster_path String?
+  backdrop_path String?
   release_date String?
   runtime Int?
   videoKey String

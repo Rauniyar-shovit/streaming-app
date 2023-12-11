@@ -17,6 +17,8 @@ const Banner = () => {
     setVideoKey(data?.showTrailerKey);
   }, [data]);
 
+  console.log("banner ,", show);
+
   const { setCurrentMovie } = useContext(MovieModalContext);
 
   const shortOverview = (text: string) =>

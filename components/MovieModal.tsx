@@ -25,8 +25,6 @@ const MovieModal = () => {
 
   const profileId = searchParams.get("id");
 
-  console.log(existsOnList);
-
   const closeModalHandler = () => {
     setIsOpen(false);
   };

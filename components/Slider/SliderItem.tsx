@@ -2,12 +2,13 @@
 import React from "react";
 
 const SliderItem = ({ movie, width }: { movie: any; width: any }) => {
-  if (!movie.backdrop_path) {
+  if (!movie?.backdrop_path) {
     return;
   }
+
   return (
     <div
-      className="px-[4px] inline-block first-of-type:pl-0 last-of-type:pr-0"
+      className="px-[4px] inline-block first-of-type:pl-0 last-of-type:pr-0 hover:scale-[1.55] hover:z-[999] transition duration-200"
       style={{ width: `${width}%` }}
     >
       <img

@@ -1,5 +1,6 @@
 import bcrypt from "bcrypt";
 import prismadb from "@/lib/prismadb";
+import { NextResponse } from "next/server";
 
 export async function POST(req: Request) {
   try {
@@ -8,7 +9,10 @@ export async function POST(req: Request) {
     const existingUser = await prismadb.user.findUnique({ where: { email } });
 
     if (existingUser) {
-      return new Response("Email Already Exists");
+      return NextResponse.json(
+        { message: "Email Already Exists" },
+        { status: 409 }
+      );
     }
 
     const hashedPassword = await bcrypt.hash(password, 12);
@@ -23,9 +27,9 @@ export async function POST(req: Request) {
       },
     });
 
-    return new Response("User created");
+    return NextResponse.json({ message: "User Created " }, { status: 200 });
   } catch (error) {
     console.log(error);
-    return new Response("Error");
+    return NextResponse.json({ message: "Error" }, { status: 404 });
   }
 }

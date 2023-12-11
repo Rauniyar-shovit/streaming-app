@@ -2,6 +2,7 @@
 import { MyListContext } from "@/context/MyListContext";
 import useMyList from "@/hooks/useMyList";
 import React, { useContext, useEffect } from "react";
+import MoviesSection from "./MoviesSection";
 
 export const MyList = () => {
   const { myList, setMyList } = useContext(MyListContext);
@@ -10,5 +11,7 @@ export const MyList = () => {
     setMyList(data);
   }, [data]);
 
-  return <></>;
+  console.log("myList ", myList);
+
+  return <MoviesSection title="My List" movieDetails={myList} />;
 };

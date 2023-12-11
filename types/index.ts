@@ -69,7 +69,7 @@ export interface BannerProps {
     number_of_episodes?: string;
     number_of_seasons?: string;
     title: string;
-    poster_path: string;
+    backdrop_path: string;
     release_date?: string;
     runtime?: string;
     mediaType: string;
@@ -99,7 +99,7 @@ export interface MovieObjType {
     number_of_episodes?: string;
     number_of_seasons?: string;
     title: string;
-    poster_path: string;
+    backdrop_path: string;
     release_date?: string;
     runtime?: string;
     mediaType: string;

@@ -21,7 +21,6 @@ const Browse = async () => {
 
   return (
     <>
-      <MyList />
       <Navbar />
       <Banner />
 
@@ -40,6 +39,7 @@ const Browse = async () => {
           title="Korean TV Dramedies"
         />
       </div>
+      <MyList />
       <MovieModal />
     </>
   );
