@@ -10,7 +10,7 @@ export async function GET() {
 
     const res = await apiShowDetail(randomShow.id, randomShow.media_type);
     let data;
-    console.log("rrrrrrrrrrrreeessssss", res);
+
     const { id, genres, overview } = res;
     if (randomShow.media_type === "tv") {
       const {
