@@ -1,5 +1,5 @@
 import { authOptions } from "@/app/api/auth/[...nextauth]/route";
-import { Banner, MovieRow, Navbar } from "@/components";
+import { Banner, BrowseFooter, MovieRow, Navbar } from "@/components";
 import LogoutButton from "@/components/SignOut";
 import MovieModal from "@/components/MovieModal";
 import { getServerSession } from "next-auth";
@@ -40,7 +40,10 @@ const Browse = async () => {
         />
       </div>
       <MyList />
+
       <MovieModal />
+
+      <BrowseFooter />
     </>
   );
 };

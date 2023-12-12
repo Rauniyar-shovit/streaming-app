@@ -120,3 +120,19 @@ export const navLinks = [
   { title: "My list", link: "#" },
   { title: "Browse by Language", link: "#" },
 ];
+
+export const browseFooterLinks = [
+  { title: "Audio Description", link: "#" },
+  { title: "Help Centre", link: "#" },
+  { title: "Gift cards", link: "#" },
+  { title: "Media Center", link: "#" },
+  { title: "Inverstor Relations", link: "#" },
+  { title: "Jobs", link: "#" },
+  { title: "Netflix Shop", link: "#" },
+  { title: "Terms of Use", link: "#" },
+  { title: "Privacy", link: "#" },
+  { title: "Legal notices", link: "#" },
+  { title: "Cookie preferences", link: "#" },
+  { title: "Corporate information", link: "#" },
+  { title: "Contact us", link: "#" },
+];

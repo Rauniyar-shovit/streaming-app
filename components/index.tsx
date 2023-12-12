@@ -29,6 +29,7 @@ import MovieRow from "./MovieRow";
 import Thumbnail from "./Thumbnail";
 import ProfileMenu from "./ProfileMenu";
 import SignOut from "./SignOut";
+import BrowseFooter from "./BrowseFooter";
 
 export {
   Hero,
@@ -62,4 +63,5 @@ export {
   Thumbnail,
   ProfileMenu,
   SignOut,
+  BrowseFooter,
 };
