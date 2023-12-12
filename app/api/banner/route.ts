@@ -49,6 +49,7 @@ export async function GET() {
       showData?.id,
       randomShow.media_type
     );
+    console.log("Shooow trailer", showTrailerKey);
 
     return NextResponse.json({ showData, showTrailerKey }, { status: 200 });
   } catch (err) {
