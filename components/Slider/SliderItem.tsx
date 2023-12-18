@@ -16,11 +16,6 @@ const SliderItem = ({
   const [showData, setShowData] = useState(null);
   const [fetchData, setFetchData] = useState(false);
   const { setIsOpen, setCurrentMovie } = useContext(MovieModalContext);
-  console.log(movie.id);
-
-  if (!movie?.backdrop_path) {
-    return;
-  }
 
   useEffect(() => {
     const fetchShowData = async () => {
@@ -37,6 +32,10 @@ const SliderItem = ({
 
     fetchShowData();
   }, [fetchData]);
+
+  if (!movie?.backdrop_path) {
+    return;
+  }
 
   const showModalHandler = () => {
     setFetchData(true);
