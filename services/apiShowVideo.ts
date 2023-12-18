@@ -8,7 +8,8 @@ export const apiShowVideo = async (id: string, mediaType: string) => {
     const videoIndex = videos.findIndex(
       (video: any) => video.type === "Trailer"
     );
-    return videos[videoIndex].key;
+
+    return videos[videoIndex]?.key;
   } catch (err) {
     console.log(err);
   }

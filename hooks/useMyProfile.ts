@@ -4,7 +4,7 @@ import useSWR from "swr";
 
 const useMyProfile = (profileId: string) => {
   const { data, error, isLoading } = useSWR(
-    "/api/myProfile",
+    "/api/fetchMyProfile",
     (url: string) =>
       axios.post(url, { profileId }).then((res) => {
         return res.data.profile;

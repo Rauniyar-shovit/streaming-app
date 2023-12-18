@@ -10,6 +10,7 @@ import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import { mutate } from "swr";
 import { MyListContext } from "@/context/MyListContext";
+import Image from "next/image";
 
 const MovieModal = () => {
   const { isOpen, setIsOpen, currentMovie } = useContext(MovieModalContext);
@@ -83,10 +84,21 @@ const MovieModal = () => {
               <div className="w-full">
                 <Dialog.Panel className="w-full mx-auto  xl:max-w-[60%]  max-w-[95%] transform overflow-hidden rounded-md bg-primary-black  text-left align-middle shadow-xl transition-all ">
                   <div className="relative   w-full   overflow-hidden aspect-video pointer-events-none ">
-                    <iframe
-                      className="w-[300%]  h-[100%]   -ml-[100%] object-cover brightness-75 "
-                      src={`https://www.youtube.com/embed/${currentMovie?.videoKey}?autoplay=1&mute=1&playlist=${currentMovie?.videoKey}&loop=1&color=white&controls=0&modestbranding=1&rel=0`}
-                    />
+                    {currentMovie?.videoKey && (
+                      <iframe
+                        className="w-[300%]  h-[100%]   -ml-[100%] object-cover brightness-75 "
+                        src={`https://www.youtube.com/embed/${currentMovie?.videoKey}?autoplay=1&mute=1&playlist=${currentMovie?.videoKey}&loop=1&color=white&controls=0&modestbranding=1&rel=0`}
+                      />
+                    )}
+                    {!currentMovie?.videoKey && (
+                      <div className="w-full">
+                        <Image
+                          src={`http://image.tmdb.org/t/p/w780${currentMovie?.show.backdrop_path}`}
+                          alt="show-poster"
+                          fill
+                        />
+                      </div>
+                    )}
 
                     <button
                       onClick={closeModalHandler}
@@ -94,14 +106,14 @@ const MovieModal = () => {
                     >
                       <IoCloseCircleSharp className="text-4xl text-primary-black-300" />
                     </button>
-                    <h3 className=" absolute bottom-10 left-5  pointer-events-auto text-lg font-bold mb-3">
+                    <h3 className=" absolute bottom-10 left-5  sm:bottom-14 sm:left-10 lg:bottom-20 lg:left-14 3xl:bottom-24 3xl:left-24 pointer-events-auto text-lg lg:text-2xl 3xl:text-3xl font-bold mb-3">
                       {currentMovie?.show?.title}
                     </h3>
-                    <div className="flex gap-2 sm:gap-3 absolute bottom-3.5 left-5  pointer-events-auto">
+                    <div className="flex gap-2 sm:gap-3 absolute bottom-3.5 left-5  sm:bottom-6 sm:left-10  lg:bottom-10 lg:left-14  3xl:bottom-14 3xl:left-24 pointer-events-auto">
                       <PlayButton
-                        btnTextClassName="text-xs"
-                        btnClassName="px-3 py-0.5 "
-                        iconClassName="text-xs"
+                        btnTextClassName="text-xs 3xl:text-sm"
+                        btnClassName="px-3 py-0.5 3xl:px-4 3xl:py-1.5"
+                        iconClassName="text-xs 3xl:text-md"
                       />
                       <AddToMyList
                         deleteFromMyList={deleteFromMyListHandler}

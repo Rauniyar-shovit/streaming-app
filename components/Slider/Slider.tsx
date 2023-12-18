@@ -3,7 +3,7 @@ import React, { useState, useEffect } from "react";
 import SliderControl from "./SliderControl";
 import SliderItem from "./SliderItem";
 
-const Slider = ({ movies }: { movies: any }) => {
+const Slider = ({ movies, mediaType }: { movies: any; mediaType: string }) => {
   const [sliderHasMoved, setSliderHasMoved] = useState(false); // boolean to display prev arrow
   const [sliderMoving, setSliderMoving] = useState(false); // boolean for slider animation
   const [movePercentage, setMovePercentage] = useState(0); // move percentage to shift slider during animation
@@ -48,6 +48,7 @@ const Slider = ({ movies }: { movies: any }) => {
       for (let index = 0; index < totalItems; index++) {
         sliderContents.unshift(
           <SliderItem
+            mediaType={mediaType}
             movie={movies[index]}
             key={`${movies[index]?.id}-${index}`}
             width={100 / itemsInRow}
@@ -108,6 +109,7 @@ const Slider = ({ movies }: { movies: any }) => {
       for (let index of indexToDisplay) {
         sliderContents.push(
           <SliderItem
+            mediaType={mediaType}
             movie={movies[index]}
             key={`${movies[index]?.id}-${index}`}
             width={100 / itemsInRow}

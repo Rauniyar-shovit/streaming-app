@@ -25,21 +25,24 @@ const Browse = async () => {
       <Banner />
 
       <div>
-        <MoviesSection
+        {/* <MoviesSection
           url="https://api.themoviedb.org/3/trending/all/day?language=en-US"
           title="Trending now"
-        />
+          
+        /> */}
         <MoviesSection
           url="https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_original_language=ja"
           title="Japanese Series"
+          mediaType="tv"
         />
 
         <MoviesSection
           url="https://api.themoviedb.org/3/discover/tv?include_adult=false&include_null_first_air_dates=false&language=en-US&page=1&sort_by=popularity.desc&with_original_language=ko"
           title="Korean TV Dramedies"
+          mediaType="tv"
         />
       </div>
-      <MyList />
+      {/* <MyList /> */}
 
       <MovieModal />
 

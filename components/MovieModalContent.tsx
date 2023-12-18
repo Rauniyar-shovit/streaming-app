@@ -26,7 +26,7 @@ const MovieModalContent = ({ show }: { show: any }) => {
   }, [id, mediaType]);
 
   return (
-    <div className="w-full ">
+    <div className="w-full pb-8  ">
       <div className="flex gap-2 w-[85%] mx-auto mt-8  text-gray-400 text-sm">
         <p className="text-green-100 font-bold">95% match</p>
         <div>

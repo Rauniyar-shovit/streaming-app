@@ -8,10 +8,12 @@ const MoviesSection = ({
   title,
   url,
   movieDetails,
+  mediaType,
 }: {
   title?: string;
   url?: string;
   movieDetails?: any;
+  mediaType: string;
 }) => {
   let movies: any;
 
@@ -37,7 +39,7 @@ const MoviesSection = ({
       </div>
 
       <div>
-        <Slider movies={movies} />
+        <Slider movies={movies} mediaType={mediaType} />
       </div>
     </div>
   );
