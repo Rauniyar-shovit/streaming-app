@@ -11,5 +11,6 @@ export const MyList = () => {
     setMyList(data);
   }, [data]);
 
-  return <MoviesSection title="My List" movieDetails={myList} />;
+  // return <MoviesSection title="My List" movieDetails={myList} mediaType="tv"/>;
+  return <></>;
 };
