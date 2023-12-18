@@ -1,7 +1,5 @@
 "use client";
 import { MovieModalContext } from "@/context/MovieModalContext";
-import useShowDetails from "@/hooks/useShowDetails";
-import { MovieObjType } from "@/types";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 
@@ -26,7 +24,7 @@ const SliderItem = ({
           showId: movie.id,
           mediaType,
         });
-        console.log(res);
+
         setMovieData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
