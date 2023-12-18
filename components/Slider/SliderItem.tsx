@@ -1,6 +1,7 @@
 "use client";
 import { MovieModalContext } from "@/context/MovieModalContext";
 import useShowDetails from "@/hooks/useShowDetails";
+import { MovieObjType } from "@/types";
 import axios from "axios";
 import React, { useContext, useEffect, useState } from "react";
 
@@ -13,7 +14,8 @@ const SliderItem = ({
   width: any;
   mediaType: string;
 }) => {
-  const [showData, setShowData] = useState(null);
+  // res is an object of show data and show trailer key so make a type for movieData with showData and optional showTrailerKey
+  const [movieData, setMovieData] = useState<any>();
   const [fetchData, setFetchData] = useState(false);
   const { setIsOpen, setCurrentMovie } = useContext(MovieModalContext);
 
@@ -24,7 +26,8 @@ const SliderItem = ({
           showId: movie.id,
           mediaType,
         });
-        setShowData(res.data);
+        console.log(res);
+        setMovieData(res.data);
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -40,8 +43,8 @@ const SliderItem = ({
   const showModalHandler = () => {
     setFetchData(true);
     setCurrentMovie({
-      show: showData?.showData,
-      videoKey: showData?.showTrailerKey,
+      show: movieData?.showData,
+      videoKey: movieData?.showTrailerKey,
     });
     setIsOpen(true);
   };
