@@ -8,9 +8,9 @@ The Netflix clone replicates the user interface and functionalities of Netflix. 
 
 ## Features
 
-User Authentication: Allow users to sign up, log in, and manage their profiles.
-Content Browsing: Display a catalog of movies and series available for streaming.
-Video Playback: Enable users to play the trailer for selected movies or series episodes.
+User Authentication: Allow users to sign up, log in, and manage their profiles.  
+Content Browsing: Display a catalog of movies and series available for streaming.  
+Video Playback: Enable users to play the trailer for selected movies or series episodes.  
 Watchlist Management: Enable users to create and manage their watchlist.
 
 ## Installation
@@ -25,10 +25,10 @@ To run this project locally, follow these steps:
 
 ## Tech Stack
 
-Next.js: React framework for building server-rendered React applications.
-Prisma: Modern database access toolkit for TypeScript & Node.js.
-MongoDB: Document-oriented NoSQL database for flexible data storage.
-Tailwind CSS: Utility-first CSS framework for designing responsive web interfaces.
+Next.js: React framework for building server-rendered React applications.  
+Prisma: Modern database access toolkit for TypeScript & Node.js.  
+MongoDB: Document-oriented NoSQL database for flexible data storage.  
+Tailwind CSS: Utility-first CSS framework for designing responsive web interfaces.  
 TypeScript: Superset of JavaScript that adds static types to the language.
 
 ## Contributing
