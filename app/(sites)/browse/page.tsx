@@ -15,10 +15,6 @@ const Browse = async () => {
     redirect("/login");
   }
 
-  // const res = await fetchData(
-  //   "https://api.themoviedb.org/3/trending/all/day?language=en-US"
-  // );
-
   return (
     <>
       <Navbar />

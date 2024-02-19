@@ -11,12 +11,13 @@ import { useForm } from "react-hook-form";
 import axios from "axios";
 import { login } from "@/utils/login";
 import { useRouter } from "next/navigation";
-const Page = () => {
+const Signup = () => {
   const router = useRouter();
   const {
     formState: { errors, isSubmitting },
     register,
     handleSubmit,
+    reset,
   } = useForm<FormData>();
 
   const [responseMessage, setResponseMessage] = useState<undefined | string>();
@@ -31,7 +32,7 @@ const Page = () => {
           password: data.password,
           name: data.name?.trim(),
         };
-
+        console.log("hherrere");
         const { status } = await axios.post("/api/register", {
           ...customizedData,
         });
@@ -42,15 +43,16 @@ const Page = () => {
             password: customizedData.password,
           });
 
-          if (res?.error !== null) {
-            setResponseMessage(res?.error);
-          }
           if (res?.status === 200) {
             router.push(res?.url!);
           }
         }
-      } catch (error) {
-        console.log(error);
+      } catch (error: any) {
+        const {
+          response: { data },
+        } = error;
+        setResponseMessage(data.message);
+        reset();
       }
     },
     [router]
@@ -181,4 +183,4 @@ const Page = () => {
   );
 };
 
-export default Page;
+export default Signup;
