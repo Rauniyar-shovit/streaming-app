@@ -12,6 +12,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "Netflix Clone",
   description: "Clone of Netflix",
+  other: {
+    "google-site-verification": "UIp8v_x2YTMz3xk9iuISK_SxmEYESWomBQwdsp-6cew",
+  },
 };
 
 export default function RootLayout({
