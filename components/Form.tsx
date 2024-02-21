@@ -27,13 +27,14 @@ const Form = () => {
     email: string;
     password: string;
   }) => {
+    console.log("hhhhhhhhhhhhhherrrrrrrrrre");
     const res = await login({ email, password });
-
+    console.log(res);
     if (res?.error !== null) {
       setSignInError(res?.error);
     }
 
-    if (res?.status === 200) {
+    if (res?.status === 200 && !res?.error) {
       router.push(res?.url!);
     }
   };
