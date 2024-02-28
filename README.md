@@ -17,7 +17,7 @@ Watchlist Management: Enable users to create and manage their watchlist.
 
 To run this project locally, follow these steps:
 
-1. Clone the repository: git clone https://github.com/Rauniyar-shovit/Netflix-clone.git
+1. Clone the repository: git clone https://github.com/Rauniyar-shovit/streaming-app.git
 2. Navigate to the project directory: cd Netflix-clone
 3. Install dependencies: npm install or yarn install
 4. Set up the required environment variables.
